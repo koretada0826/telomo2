@@ -6,6 +6,7 @@ import Newcomer from './components/Newcomer';
 import Flow from './components/Flow';
 import Pricing from './components/Pricing';
 import StepForm from './components/StepForm';
+import DocumentRequest from './components/DocumentRequest';
 import FinalCTA from './components/FinalCTA';
 import FixedCTA from './components/FixedCTA';
 import Footer from './components/Footer';
@@ -20,7 +21,7 @@ export default function App() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: '0px 0px -10% 0px' }
     );
 
     const observe = (el) => {
@@ -60,6 +61,7 @@ export default function App() {
         <Flow />
         <Pricing />
         <StepForm />
+        <DocumentRequest />
         <FinalCTA />
       </main>
       <Footer />

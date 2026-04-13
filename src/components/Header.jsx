@@ -46,14 +46,14 @@ export default function Header() {
         {/* CTA buttons - matching reference exactly */}
         <div className="flex items-center gap-2.5">
           <a
-            href="#contact-form"
-            className="hidden sm:inline-flex items-center justify-center bg-black text-white text-[13px] font-bold h-[42px] px-7 rounded-[96px] no-underline hover:bg-[#222] transition-colors tracking-[0.03em]"
+            href="#document-request"
+            className="header-pulse-black hidden sm:inline-flex items-center justify-center bg-black text-white text-[13px] font-bold h-[42px] px-7 rounded-[96px] no-underline hover:bg-[#222] transition-colors tracking-[0.03em]"
           >
             資料請求
           </a>
           <a
             href="#contact-form"
-            className="inline-flex items-center justify-center bg-[#f55f00] text-white text-[13px] font-bold h-[42px] px-7 rounded-[96px] no-underline hover:bg-[#ca4700] transition-colors tracking-[0.03em]"
+            className="header-pulse-orange inline-flex items-center justify-center bg-[#f55f00] text-white text-[13px] font-bold h-[42px] px-7 rounded-[96px] no-underline hover:bg-[#ca4700] transition-colors tracking-[0.03em]"
           >
             お問い合わせ
           </a>

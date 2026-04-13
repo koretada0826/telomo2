@@ -73,7 +73,7 @@ export default function Hero() {
             {/* CTAボタン */}
             <div className="fade-in flex flex-col sm:flex-row gap-4 sm:gap-5">
               <a
-                href="#contact-form"
+                href="#document-request"
                 className="hero-cta-black inline-flex items-center justify-center bg-black text-white text-[17px] sm:text-[19px] font-bold h-[64px] sm:h-[74px] px-10 sm:px-16 rounded-[96px] no-underline tracking-[0.03em] min-w-[220px]"
               >
                 資料請求

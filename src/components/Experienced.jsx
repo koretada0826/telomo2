@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import AchievementsAwards from './AchievementsAwards';
 
 function CountUp({ target, suffix }) {
   const [count, setCount] = useState(0);
@@ -115,47 +116,337 @@ const painPoints = [
 ];
 
 const comparisons = [
-  { item: '月額費用', others: '30〜80万円', telemo: '14万円' },
-  { item: 'コール数', others: '非公開が多い', telemo: '4,700コール保証' },
-  { item: 'ログ開示', others: '一部 or なし', telemo: '全コール100%開示' },
-  { item: '初期費用', others: '10〜30万円', telemo: '0円' },
-  { item: '契約期間', others: '3〜6ヶ月縛り', telemo: '縛りなし' },
-  { item: 'レポート', others: '月1回の概要のみ', telemo: 'リアルタイム共有' },
+  { item: '月額費用',   a: { v: '30〜50万円', bad: true },     b: { v: '50〜80万円', bad: true },     t: '14万円' },
+  { item: 'コール数',   a: { v: '非公開', bad: true },        b: { v: '月2,000コール〜', bad: true }, t: '4,700コール保証' },
+  { item: 'ログ開示',   a: { v: 'サマリーのみ', bad: true },    b: { v: '一部のみ', bad: true },       t: '全コール100%開示' },
+  { item: '初期費用',   a: { v: '10〜20万円', bad: true },     b: { v: '20〜30万円', bad: true },     t: '0円' },
+  { item: '契約期間',   a: { v: '3ヶ月縛り', bad: true },      b: { v: '6ヶ月縛り', bad: true },      t: '縛りなし' },
+  { item: 'レポート',   a: { v: '月1回PDFのみ', bad: true },   b: { v: '月1回+面談', bad: true },     t: 'リアルタイム共有' },
 ];
 
-// SVG laurel wreath - rich golden
-const Laurel = () => (
-  <svg viewBox="0 0 200 200" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Left branch */}
-    <path d="M50 170 C42 150,38 130,40 110 C41 100,44 92,50 86 C47 96,46 108,48 120 C50 132,54 150,50 170Z" fill="#c9a84c" opacity="0.35"/>
-    <path d="M42 160 C36 142,30 120,34 98 C36 88,40 80,46 74 C42 84,40 96,42 108 C44 122,48 142,42 160Z" fill="#c9a84c" opacity="0.25"/>
-    <path d="M56 165 C50 148,46 128,48 108 C50 98,54 90,60 84 C56 94,54 106,56 118 C58 130,60 148,56 165Z" fill="#c9a84c" opacity="0.4"/>
-    <path d="M36 148 C32 132,26 112,30 90 C32 80,36 72,42 66 C38 78,36 92,38 104 C40 118,38 136,36 148Z" fill="#c9a84c" opacity="0.2"/>
-    <path d="M62 158 C58 144,54 126,56 108 C58 98,62 90,68 86 C64 94,62 106,64 116 C66 128,64 144,62 158Z" fill="#c9a84c" opacity="0.3"/>
-    {/* Right branch */}
-    <path d="M150 170 C158 150,162 130,160 110 C159 100,156 92,150 86 C153 96,154 108,152 120 C150 132,146 150,150 170Z" fill="#c9a84c" opacity="0.35"/>
-    <path d="M158 160 C164 142,170 120,166 98 C164 88,160 80,154 74 C158 84,160 96,158 108 C156 122,152 142,158 160Z" fill="#c9a84c" opacity="0.25"/>
-    <path d="M144 165 C150 148,154 128,152 108 C150 98,146 90,140 84 C144 94,146 106,144 118 C142 130,140 148,144 165Z" fill="#c9a84c" opacity="0.4"/>
-    <path d="M164 148 C168 132,174 112,170 90 C168 80,164 72,158 66 C162 78,164 92,162 104 C160 118,162 136,164 148Z" fill="#c9a84c" opacity="0.2"/>
-    <path d="M138 158 C142 144,146 126,144 108 C142 98,138 90,132 86 C136 94,138 106,136 116 C134 128,136 144,138 158Z" fill="#c9a84c" opacity="0.3"/>
-    {/* Bottom tie */}
-    <circle cx="100" cy="175" r="4" fill="#c9a84c" opacity="0.3"/>
-  </svg>
-);
+// CASE別の装飾SVG (左パネルの背景に表示) - 編集デザイン風アイコン
+const painIcons = {
+  // 01: 下落グラフ + 流れ落ちるお金
+  '01': (
+    <svg viewBox="0 0 240 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="pi1-orange" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ff7a1a" />
+          <stop offset="100%" stopColor="#c94700" />
+        </linearGradient>
+      </defs>
+      {/* 紙幣 */}
+      <g transform="rotate(-12 60 70)">
+        <rect x="30" y="40" width="80" height="44" rx="3" stroke="rgba(255,255,255,0.22)" strokeWidth="2" fill="rgba(255,255,255,0.04)" />
+        <circle cx="70" cy="62" r="11" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" fill="none" />
+        <text x="70" y="66" textAnchor="middle" fontSize="14" fill="rgba(255,255,255,0.55)" fontWeight="800">¥</text>
+        <line x1="38" y1="48" x2="50" y2="48" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+        <line x1="38" y1="76" x2="50" y2="76" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+        <line x1="92" y1="48" x2="104" y2="48" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+        <line x1="92" y1="76" x2="104" y2="76" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+      </g>
+      {/* 飛んでいくコイン */}
+      <g>
+        <circle cx="155" cy="55" r="11" fill="url(#pi1-orange)" opacity="0.95" />
+        <text x="155" y="60" textAnchor="middle" fontSize="14" fill="#fff" fontWeight="900">¥</text>
+        <path d="M165 50 Q175 35 188 35" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" strokeDasharray="3 3" fill="none" />
+      </g>
+      <g opacity="0.7">
+        <circle cx="195" cy="38" r="7" fill="#f55f00" />
+        <text x="195" y="42" textAnchor="middle" fontSize="9" fill="#fff" fontWeight="900">¥</text>
+      </g>
+      <g opacity="0.5">
+        <circle cx="218" cy="22" r="5" fill="#f55f00" />
+      </g>
+
+      {/* 下落グラフ */}
+      <g transform="translate(20 130)">
+        {/* 軸 */}
+        <line x1="0" y1="0" x2="0" y2="80" stroke="rgba(255,255,255,0.25)" strokeWidth="2" strokeLinecap="round" />
+        <line x1="0" y1="80" x2="200" y2="80" stroke="rgba(255,255,255,0.25)" strokeWidth="2" strokeLinecap="round" />
+        {/* 棒グラフ (右に行くほど低い = 成果減少) */}
+        <rect x="14" y="14" width="20" height="66" fill="rgba(255,255,255,0.2)" />
+        <rect x="50" y="32" width="20" height="48" fill="rgba(255,255,255,0.18)" />
+        <rect x="86" y="46" width="20" height="34" fill="rgba(255,255,255,0.16)" />
+        <rect x="122" y="58" width="20" height="22" fill="rgba(255,255,255,0.14)" />
+        <rect x="158" y="70" width="20" height="10" fill="url(#pi1-orange)" />
+        {/* 下向き矢印（オレンジ） */}
+        <path d="M14 4 L172 70" stroke="url(#pi1-orange)" strokeWidth="3" strokeLinecap="round" />
+        <path d="M165 60 L172 70 L160 70" fill="url(#pi1-orange)" />
+      </g>
+    </svg>
+  ),
+
+  // 02: ブラックボックス (鍵付き) + 中身が見えない目
+  '02': (
+    <svg viewBox="0 0 240 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="pi2-orange" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ff7a1a" />
+          <stop offset="100%" stopColor="#c94700" />
+        </linearGradient>
+      </defs>
+      {/* 大きな箱 */}
+      <g>
+        <path d="M55 80 L185 80 L185 200 L55 200 Z"
+          stroke="rgba(255,255,255,0.22)" strokeWidth="2.5" fill="rgba(255,255,255,0.04)" strokeLinejoin="round" />
+        {/* 箱の蓋 */}
+        <path d="M40 65 L200 65 L185 80 L55 80 Z"
+          stroke="rgba(255,255,255,0.22)" strokeWidth="2.5" fill="rgba(255,255,255,0.06)" strokeLinejoin="round" />
+        {/* 蓋の南京錠 */}
+        <g transform="translate(108 50)">
+          <rect x="0" y="6" width="24" height="20" rx="3" fill="url(#pi2-orange)" />
+          <path d="M5 6 L5 0 Q5 -8 12 -8 Q19 -8 19 0 L19 6"
+            stroke="url(#pi2-orange)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          <circle cx="12" cy="14" r="2" fill="#fff" />
+        </g>
+      </g>
+
+      {/* 中央に閉じた目 (見えない) */}
+      <g transform="translate(120 140)">
+        <path d="M-32 0 Q0 -18 32 0 Q0 18 -32 0 Z" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" fill="none" />
+        {/* 斜線で閉じた目を表現 */}
+        <line x1="-32" y1="0" x2="32" y2="0" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" strokeLinecap="round" />
+        {/* 斜め禁止線 */}
+        <line x1="-40" y1="-12" x2="40" y2="12" stroke="url(#pi2-orange)" strokeWidth="3" strokeLinecap="round" />
+      </g>
+
+      {/* ?マーク (箱の右下) */}
+      <g transform="translate(160 175)">
+        <circle cx="0" cy="0" r="14" fill="url(#pi2-orange)" />
+        <text x="0" y="5" textAnchor="middle" fontSize="18" fill="#fff" fontWeight="900">?</text>
+      </g>
+
+      {/* 散らばる小さな?（ノイズ感） */}
+      <text x="38" y="115" fontSize="14" fill="rgba(255,255,255,0.18)" fontWeight="900">?</text>
+      <text x="200" y="105" fontSize="11" fill="rgba(255,255,255,0.18)" fontWeight="900">?</text>
+      <text x="32" y="195" fontSize="10" fill="rgba(255,255,255,0.18)" fontWeight="900">?</text>
+    </svg>
+  ),
+
+  // 03: ざっくりレポート（数字ぼやけ・グラフ簡素）
+  '03': (
+    <svg viewBox="0 0 240 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="pi3-orange" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ff7a1a" />
+          <stop offset="100%" stopColor="#c94700" />
+        </linearGradient>
+        <filter id="pi3-blur">
+          <feGaussianBlur stdDeviation="2" />
+        </filter>
+      </defs>
+      {/* 後ろの書類 (ずらして重ね) */}
+      <g transform="rotate(-4 120 120)">
+        <path d="M50 30 L155 30 L185 60 L185 200 L50 200 Z"
+          stroke="rgba(255,255,255,0.12)" strokeWidth="2" fill="rgba(255,255,255,0.03)" strokeLinejoin="round" />
+      </g>
+      {/* メイン書類 */}
+      <g>
+        <path d="M58 38 L160 38 L190 68 L190 210 L58 210 Z"
+          stroke="rgba(255,255,255,0.25)" strokeWidth="2.5" fill="rgba(255,255,255,0.05)" strokeLinejoin="round" />
+        <path d="M160 38 L160 68 L190 68" stroke="rgba(255,255,255,0.25)" strokeWidth="2.5" fill="none" />
+
+        {/* タイトル "REPORT" */}
+        <text x="74" y="65" fontSize="11" fill="rgba(255,255,255,0.4)" fontWeight="900" letterSpacing="2">REPORT</text>
+
+        {/* ぼやけた数字 */}
+        <g filter="url(#pi3-blur)" opacity="0.6">
+          <text x="74" y="100" fontSize="32" fill="#fff" fontWeight="900">12,●●●</text>
+        </g>
+        <text x="74" y="120" fontSize="9" fill="rgba(255,255,255,0.35)">月間コール数</text>
+
+        {/* 簡素な棒グラフ (3本のみ) */}
+        <g transform="translate(74 140)">
+          <rect x="0" y="20" width="22" height="40" fill="rgba(255,255,255,0.2)" />
+          <rect x="32" y="10" width="22" height="50" fill="rgba(255,255,255,0.2)" />
+          <rect x="64" y="28" width="22" height="32" fill="url(#pi3-orange)" />
+          <line x1="-4" y1="60" x2="100" y2="60" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+        </g>
+
+        {/* 末尾のチェックなし（不完全感） */}
+        <line x1="74" y1="190" x2="160" y2="190" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeDasharray="4 3" />
+      </g>
+
+      {/* 虫眼鏡 (右下) */}
+      <g transform="translate(165 165)">
+        <circle cx="0" cy="0" r="22" fill="rgba(17,17,17,1)" />
+        <circle cx="0" cy="0" r="22" stroke="url(#pi3-orange)" strokeWidth="3" fill="none" />
+        <text x="0" y="6" textAnchor="middle" fontSize="20" fill="url(#pi3-orange)" fontWeight="900">?</text>
+        <line x1="16" y1="16" x2="32" y2="32" stroke="url(#pi3-orange)" strokeWidth="4" strokeLinecap="round" />
+      </g>
+    </svg>
+  ),
+
+  // 04: 鎖と契約書 (縛り)
+  '04': (
+    <svg viewBox="0 0 240 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="pi4-orange" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ff7a1a" />
+          <stop offset="100%" stopColor="#c94700" />
+        </linearGradient>
+        <linearGradient id="pi4-chain" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="rgba(255,255,255,0.4)" />
+          <stop offset="100%" stopColor="rgba(255,255,255,0.15)" />
+        </linearGradient>
+      </defs>
+      {/* 契約書 (背景) */}
+      <g transform="rotate(-6 120 130)">
+        <rect x="55" y="55" width="130" height="160" rx="3"
+          stroke="rgba(255,255,255,0.22)" strokeWidth="2.5" fill="rgba(255,255,255,0.05)" />
+        <text x="120" y="85" textAnchor="middle" fontSize="11" fill="rgba(255,255,255,0.5)" fontWeight="900" letterSpacing="2">CONTRACT</text>
+        {/* 罫線 */}
+        <line x1="70" y1="100" x2="170" y2="100" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="70" y1="113" x2="160" y2="113" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="70" y1="126" x2="155" y2="126" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="70" y1="139" x2="170" y2="139" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        <line x1="70" y1="152" x2="140" y2="152" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
+        {/* "6ヶ月" 印 */}
+        <g transform="translate(150 185)">
+          <circle r="20" stroke="url(#pi4-orange)" strokeWidth="2.5" fill="none" />
+          <text x="0" y="-2" textAnchor="middle" fontSize="9" fill="url(#pi4-orange)" fontWeight="900">最低</text>
+          <text x="0" y="10" textAnchor="middle" fontSize="11" fill="url(#pi4-orange)" fontWeight="900">6ヶ月</text>
+        </g>
+      </g>
+
+      {/* 鎖 (左上から右下にかけて巻き付く) */}
+      <g>
+        {/* チェーンリンク */}
+        {[0, 1, 2, 3, 4, 5].map((i) => {
+          const angle = -25 + i * 8;
+          const cx = 30 + i * 32;
+          const cy = 25 + i * 18;
+          return (
+            <ellipse
+              key={i}
+              cx={cx}
+              cy={cy}
+              rx="11"
+              ry="7"
+              stroke={i === 5 ? 'url(#pi4-orange)' : 'url(#pi4-chain)'}
+              strokeWidth="3"
+              fill="none"
+              transform={`rotate(${angle} ${cx} ${cy})`}
+            />
+          );
+        })}
+      </g>
+
+      {/* 大きな南京錠 (右下) */}
+      <g transform="translate(178 168)">
+        <rect x="-22" y="-12" width="44" height="36" rx="5" fill="url(#pi4-orange)" />
+        <path d="M-15 -12 L-15 -25 Q-15 -38 0 -38 Q15 -38 15 -25 L15 -12"
+          stroke="url(#pi4-orange)" strokeWidth="4" fill="none" strokeLinecap="round" />
+        <circle cx="0" cy="3" r="3.5" fill="#fff" />
+        <line x1="0" y1="6" x2="0" y2="14" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
+      </g>
+    </svg>
+  ),
+};
+
+// SVG laurel wreath - premium realistic leaves
+const Laurel = () => {
+  // 左側の枝: 下から上に向かって葉を配置 (root x,y: 枝の起点)
+  const leftLeaves = [
+    { cx: 55, cy: 172, rx: 7, ry: 14, rot: -30 },
+    { cx: 50, cy: 156, rx: 7.5, ry: 15, rot: -38 },
+    { cx: 46, cy: 140, rx: 8, ry: 16, rot: -46 },
+    { cx: 44, cy: 122, rx: 8, ry: 16, rot: -56 },
+    { cx: 44, cy: 104, rx: 8, ry: 15, rot: -66 },
+    { cx: 47, cy: 88,  rx: 7.5, ry: 14, rot: -76 },
+    { cx: 53, cy: 74,  rx: 7, ry: 13, rot: -88 },
+    { cx: 62, cy: 64,  rx: 6.5, ry: 12, rot: -100 },
+  ];
+  const rightLeaves = leftLeaves.map((l) => ({ ...l, cx: 200 - l.cx, rot: -l.rot }));
+
+  return (
+    <svg viewBox="0 0 200 200" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#f2d97a" />
+          <stop offset="50%" stopColor="#c9a84c" />
+          <stop offset="100%" stopColor="#8a6f2b" />
+        </linearGradient>
+        <linearGradient id="goldGradDark" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#c9a84c" />
+          <stop offset="100%" stopColor="#6b5320" />
+        </linearGradient>
+      </defs>
+
+      {/* 左の枝(茎) */}
+      <path
+        d="M62 170 Q45 130, 55 75"
+        stroke="url(#goldGradDark)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {/* 右の枝(茎) */}
+      <path
+        d="M138 170 Q155 130, 145 75"
+        stroke="url(#goldGradDark)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+
+      {/* 左の葉 */}
+      {leftLeaves.map((l, i) => (
+        <g key={`l${i}`} transform={`rotate(${l.rot} ${l.cx} ${l.cy})`}>
+          <ellipse cx={l.cx} cy={l.cy} rx={l.rx} ry={l.ry} fill="url(#goldGrad)" />
+          <ellipse
+            cx={l.cx}
+            cy={l.cy}
+            rx={l.rx * 0.45}
+            ry={l.ry * 0.8}
+            fill="rgba(255,240,180,0.35)"
+            transform={`translate(-${l.rx * 0.25} 0)`}
+          />
+        </g>
+      ))}
+
+      {/* 右の葉 */}
+      {rightLeaves.map((l, i) => (
+        <g key={`r${i}`} transform={`rotate(${l.rot} ${l.cx} ${l.cy})`}>
+          <ellipse cx={l.cx} cy={l.cy} rx={l.rx} ry={l.ry} fill="url(#goldGrad)" />
+          <ellipse
+            cx={l.cx}
+            cy={l.cy}
+            rx={l.rx * 0.45}
+            ry={l.ry * 0.8}
+            fill="rgba(255,240,180,0.35)"
+            transform={`translate(${l.rx * 0.25} 0)`}
+          />
+        </g>
+      ))}
+
+      {/* 下部リボン結び */}
+      <path
+        d="M88 175 Q100 168, 112 175"
+        stroke="url(#goldGrad)"
+        strokeWidth="2"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <circle cx="100" cy="172" r="3" fill="url(#goldGrad)" />
+    </svg>
+  );
+};
 
 const stats = [
-  { label: 'コール保証数', numberVal: 4700, numberSuffix: '', unit: 'コール/月', note: '※業界平均の約2〜5倍の実行量' },
-  { label: 'ログ開示率', numberVal: 100, numberSuffix: '', unit: '%', note: '※全コール録音をリアルタイム共有' },
-  { label: '月額費用', numberVal: 14, numberSuffix: '', unit: '万円〜', note: '※営業1人雇用の約1/4のコスト' },
+  { label: 'リピート率',     numberVal: 97, numberSuffix: '', unit: '%', note: '※継続ご契約いただいた企業の割合' },
+  { label: '最高アポイント率', numberVal: 15, numberSuffix: '', unit: '%', note: '※業界平均の約3倍の獲得率' },
+  { label: '決裁者商談率',   numberVal: 88, numberSuffix: '', unit: '%', note: '※創出商談のうち決裁者同席の割合' },
 ];
 
 export default function Experienced() {
   return (
-    <section id="experienced" className="pt-8 sm:pt-12 pb-[80px] sm:pb-[120px] px-5 sm:px-10 bg-white">
+    <section id="experienced" className="pt-8 sm:pt-12 pb-10 sm:pb-14 px-5 sm:px-10 bg-white">
       <div className="max-w-[1240px] mx-auto">
 
         {/* ===== Hero-style intro block (like reference) ===== */}
-        <div className="fade-in text-center mb-16 sm:mb-20">
+        <div className="fade-in text-center mb-2">
           <p className="text-[22px] sm:text-[28px] lg:text-[32px] font-black text-[#f55f00] leading-[1.3] mb-3">
             テレモは
           </p>
@@ -170,32 +461,8 @@ export default function Experienced() {
           </p>
         </div>
 
-        {/* ===== Stats - 3 clean cards ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 mb-20 sm:mb-24">
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className="fade-in text-center relative bg-white rounded-[16px] py-9 px-6 border border-[#eee] shadow-[0_2px_12px_rgba(0,0,0,0.04)]"
-              style={{ transitionDelay: `${i * 0.15}s` }}
-            >
-              {/* Top accent bar */}
-              <div className="absolute top-0 left-6 right-6 h-[3px] rounded-b-full bg-[#f55f00]" />
-
-              <div className="relative z-10">
-                <p className="text-[13px] font-bold text-[#f55f00] tracking-[0.08em] mb-3">
-                  {s.label}
-                </p>
-
-                <p className="text-[44px] sm:text-[50px] font-black leading-none tracking-tight text-[#b8962e]" style={{ fontFamily: '"M PLUS 1p", sans-serif' }}>
-                  <CountUp target={s.numberVal} suffix={s.numberSuffix} />
-                  <span className="text-[15px] sm:text-[17px] font-bold text-[#999] ml-1">{s.unit}</span>
-                </p>
-
-                <p className="text-[11px] text-[#bbb] mt-3 leading-[1.5]">{s.note}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* ===== Achievements (gold laurel) ===== */}
+        <AchievementsAwards />
 
         {/* ===== Pain points - reference style ===== */}
         <div className="mb-16 sm:mb-20">
@@ -205,81 +472,168 @@ export default function Experienced() {
               こんな経験、<span className="text-[#f55f00]">ありませんか？</span>
             </h2>
           </div>
-          <p className="fade-in text-center text-[16px] sm:text-[18px] text-[#4d4d4d] leading-[2] max-w-[700px] mx-auto mb-12 sm:mb-16">
+          <p className="fade-in text-center text-[16px] sm:text-[18px] text-[#4d4d4d] leading-[2] max-w-[700px] mx-auto mb-10">
             営業代行を使ったことがある方なら、一度は感じたことがあるはず。
             <br />
             テレモは、これらすべてを解決するために設計されました。
           </p>
 
-          {/* Feature cards - 画像全面+白カードオーバーレイ */}
-          <div className="space-y-16 sm:space-y-20">
+
+          {/* Case File スタイル - 編集デザイン */}
+          <div className="space-y-10 sm:space-y-14">
             {painPoints.map((p, i) => (
-              <div
+              <article
                 key={i}
-                className="fade-in relative rounded-[16px] overflow-hidden"
-                style={{ transitionDelay: `${i * 0.1}s` }}
+                className="fade-in relative bg-white border-2 border-black"
+                style={{ transitionDelay: `${i * 0.08}s` }}
               >
-                {/* 背景画像（全面） */}
-                <div className="absolute inset-0" style={{ background: p.gradient }} />
-                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${p.img})`, opacity: 0.75 }} />
-                <div className="absolute inset-0 bg-black/15" />
-
-                {/* 左端オレンジバー */}
-                <div className="absolute top-0 left-0 w-[4px] h-full bg-[#f55f00] z-20" />
-
-                {/* コンテンツ */}
-                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[5fr_6fr]">
-
-                  {/* 左: 番号+課題テキスト */}
-                  <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10 min-h-[220px] lg:min-h-[400px]">
-                    <span className="text-[64px] sm:text-[80px] font-black text-white leading-none" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>
-                      {p.num}
-                    </span>
-                    <p className="text-[17px] sm:text-[20px] text-white leading-[1.8] font-bold" style={{ whiteSpace: 'pre-line' }}>
-                      {p.detail}
-                    </p>
+                {/* === マストヘッド === */}
+                <header className="relative bg-black text-white flex items-stretch">
+                  {/* 番号バッジ */}
+                  <div className="flex items-center justify-center px-5 sm:px-7 border-r border-white/10">
+                    <div className="text-center">
+                      <p className="text-[9px] sm:text-[10px] font-black text-[#f55f00] tracking-[0.3em] leading-none">CASE</p>
+                      <p
+                        className="text-[36px] sm:text-[44px] font-black leading-none mt-1"
+                        style={{ fontFamily: '"M PLUS 1p", sans-serif' }}
+                      >
+                        {p.num}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* 右: 白カード */}
-                  <div className="bg-white/[0.97] backdrop-blur-sm p-6 sm:p-8">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="w-3 h-3 rounded-full bg-[#f55f00] shrink-0" />
-                      <span className="text-[15px] font-bold text-[#f55f00] tracking-[0.05em]">課題 {p.num}</span>
-                    </div>
-
-                    <h3 className="text-[24px] sm:text-[28px] font-black text-black mb-5" style={{ whiteSpace: 'pre-line', lineHeight: 1.35 }}>
+                  {/* タイトル */}
+                  <div className="flex-1 flex items-center px-5 sm:px-7 py-5">
+                    <h3
+                      className="text-[20px] sm:text-[26px] lg:text-[30px] font-black leading-[1.3]"
+                      style={{ whiteSpace: 'pre-line' }}
+                    >
                       {p.label}
                     </h3>
+                  </div>
 
-                    <p className="text-[15px] sm:text-[16px] text-[#4d4d4d] mb-5" style={{ lineHeight: 1.8 }}>
+                  {/* RED FLAGスタンプ */}
+                  <div className="hidden sm:flex items-center pr-6">
+                    <div
+                      className="border-2 border-[#f55f00] text-[#f55f00] px-3 py-1.5"
+                      style={{ transform: 'rotate(-6deg)' }}
+                    >
+                      <p className="text-[10px] font-black tracking-[0.25em] leading-none">RED FLAG</p>
+                      <p className="text-[9px] font-bold tracking-[0.15em] leading-none mt-1 text-[#f55f00]/80">要 注 意</p>
+                    </div>
+                  </div>
+                </header>
+
+                {/* === 警告ストライプ === */}
+                <div
+                  className="h-[6px]"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(45deg, #f55f00 0 10px, #000 10px 20px)',
+                  }}
+                />
+
+                {/* === 本文: 引用 + 解 === */}
+                <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+
+                  {/* 左: 引用ブロック */}
+                  <div className="relative bg-[#fafaf7] p-6 sm:p-8 lg:p-10 lg:border-r border-b lg:border-b-0 border-[#e5e0d4] overflow-hidden">
+                    {/* 大きなクォーテーション */}
+                    <span
+                      className="absolute -top-4 left-3 sm:left-5 text-[140px] sm:text-[180px] leading-none text-[#f55f00]/10 select-none pointer-events-none"
+                      style={{ fontFamily: '"Noto Serif JP", serif' }}
+                    >
+                      “
+                    </span>
+
+                    {/* 装飾SVG (背景右下) */}
+                    <div className="pointer-events-none absolute -right-6 -bottom-6 w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] opacity-[0.18]">
+                      {painIcons[p.num]}
+                    </div>
+
+                    <div className="relative pl-2 sm:pl-4">
+                      <p
+                        className="text-[16px] sm:text-[18px] lg:text-[19px] text-black leading-[2.05] font-medium"
+                        style={{
+                          fontFamily: '"Noto Serif JP", serif',
+                          whiteSpace: 'pre-line',
+                        }}
+                      >
+                        {p.detail}
+                      </p>
+
+                      {/* 出所 */}
+                      <div className="mt-6 flex items-center gap-3">
+                        <span className="h-[1px] w-8 bg-black" />
+                        <span className="text-[11px] sm:text-[12px] font-bold text-black tracking-[0.2em]">
+                          実際にいただいた声より
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 右: テレモの解 */}
+                  <div className="relative p-6 sm:p-8 lg:p-10">
+                    {/* 見出しバー */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="bg-[#f55f00] text-white text-[10px] sm:text-[11px] font-black tracking-[0.25em] px-3 py-[5px]">
+                        TELEMO ANSWER
+                      </span>
+                      <span className="flex-1 h-[1px] bg-black" />
+                      <span className="text-[10px] font-black text-black tracking-[0.2em]">No.{p.num}</span>
+                    </div>
+
+                    {/* 大見出し: 結論 */}
+                    <p
+                      className="text-[18px] sm:text-[22px] lg:text-[24px] font-black text-black leading-[1.45] mb-4"
+                      style={{ fontFamily: '"Noto Serif JP", serif' }}
+                    >
+                      {p.conclusion}
+                    </p>
+
+                    {/* 本文 */}
+                    <p className="text-[14px] sm:text-[15px] text-[#3a3a3a] leading-[1.95] mb-6 pb-6 border-b border-dashed border-[#d8d8d8]">
                       {p.solution}
                     </p>
 
-                    <div className="space-y-2.5 mb-5">
+                    {/* 仕組み (3点) - 編集レイアウト */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-5">
                       {p.checks.map((check, j) => (
-                        <div key={j} className="flex items-start gap-2.5">
-                          <span className="w-[18px] h-[18px] rounded-full bg-[#f55f00] text-white text-[9px] flex items-center justify-center shrink-0 mt-0.5">✓</span>
-                          <span className="text-[14px] sm:text-[15px] text-[#333]" style={{ lineHeight: 1.7 }}>{check}</span>
+                        <div key={j} className="relative pt-3 border-t-2 border-black">
+                          <span
+                            className="absolute -top-[10px] left-0 bg-white text-[10px] font-black text-[#f55f00] tracking-[0.2em] pr-2"
+                            style={{ fontFamily: '"M PLUS 1p", sans-serif' }}
+                          >
+                            POINT.{String(j + 1).padStart(2, '0')}
+                          </span>
+                          <p className="text-[12px] sm:text-[13px] font-bold text-black leading-[1.6]">
+                            {check}
+                          </p>
                         </div>
                       ))}
                     </div>
 
-                    <div className="bg-[#f7f7f7] border border-[#eee] rounded-[8px] p-4">
-                      <p className="text-[15px] sm:text-[16px] text-black font-bold mb-2" style={{ lineHeight: 1.5 }}>
-                        {p.conclusion}
-                      </p>
-                      <div className="space-y-1.5">
-                        {p.extras.map((ex, j) => (
-                          <div key={j} className="flex items-start gap-2">
-                            <span className="text-[#f55f00] text-[11px] mt-1 shrink-0">●</span>
-                            <span className="text-[14px] text-[#4d4d4d]" style={{ lineHeight: 1.6 }}>{ex}</span>
-                          </div>
-                        ))}
-                      </div>
+                    {/* タグ */}
+                    <div className="flex flex-wrap gap-1.5 mt-5">
+                      {p.extras.map((ex, j) => (
+                        <span
+                          key={j}
+                          className="inline-block text-[11px] text-[#5a5a5a] bg-[#f7f5f0] border border-[#e8e3d6] px-2.5 py-1"
+                        >
+                          # {ex}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
+
+                {/* === フッター === */}
+                <footer className="flex items-center justify-between bg-black text-white px-5 sm:px-7 py-2.5">
+                  <span className="text-[10px] font-black tracking-[0.3em] text-white/60">EXPERIENCED</span>
+                  <span className="text-[10px] font-black tracking-[0.25em] text-[#f55f00]">
+                    {String(i + 1).padStart(2, '0')} / {String(painPoints.length).padStart(2, '0')}
+                  </span>
+                </footer>
+              </article>
             ))}
           </div>
         </div>
@@ -293,53 +647,71 @@ export default function Experienced() {
         </div>
 
         {/* ===== Comparison table ===== */}
-        <div className="fade-in mb-14">
-          <p className="text-[12px] text-[#f55f00] tracking-[0.15em] font-bold mb-4 text-center">他社比較</p>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+        <div className="fade-in mb-0">
+          <div className="text-center mb-5">
+            <p className="text-[11px] text-[#f55f00] tracking-[0.25em] font-bold mb-1.5">COMPARISON</p>
+            <h4 className="text-[20px] sm:text-[24px] font-black text-black tracking-[0.02em]">
+              主要3社との<span className="text-[#f55f00]">比較表</span>
+            </h4>
+          </div>
+
+          <div className="overflow-x-auto pt-3 -mx-4 sm:mx-0">
+            <table className="w-full min-w-[560px] border-separate border-spacing-0 mx-4 sm:mx-0">
               <thead>
-                <tr className="border-b-2 border-black">
-                  <th className="py-3 pr-4 text-[12px] text-[#999] font-medium w-[30%]"></th>
-                  <th className="py-3 px-4 text-[13px] text-[#999] font-medium w-[35%]">他社</th>
-                  <th className="py-3 pl-4 text-[13px] text-[#f55f00] font-bold w-[35%]">テレモ</th>
+                <tr>
+                  <th className="sticky left-0 bg-white py-4 px-3 text-center text-[12px] sm:text-[13px] text-[#999] font-bold tracking-[0.1em] border-b-2 border-black w-[18%]">
+                    比較項目
+                  </th>
+                  <th className="py-4 px-3 text-center border-b-2 border-[#e5e5e5] bg-[#fafafa] w-[25%]">
+                    <div className="text-[11px] text-[#999] tracking-[0.18em] font-bold mb-0.5">COMPANY</div>
+                    <div className="text-[18px] sm:text-[20px] font-black text-[#555]">A社</div>
+                  </th>
+                  <th className="py-4 px-3 text-center border-b-2 border-[#e5e5e5] bg-[#fafafa] w-[25%]">
+                    <div className="text-[11px] text-[#999] tracking-[0.18em] font-bold mb-0.5">COMPANY</div>
+                    <div className="text-[18px] sm:text-[20px] font-black text-[#555]">B社</div>
+                  </th>
+                  <th className="py-4 px-3 text-center border-b-2 border-[#f55f00] bg-[#fff4ec] w-[32%] relative">
+                    <span className="absolute -top-[11px] left-1/2 -translate-x-1/2 bg-[#f55f00] text-white text-[11px] font-bold tracking-[0.15em] px-2.5 py-[3px] rounded-[3px] whitespace-nowrap">
+                      RECOMMEND
+                    </span>
+                    <div className="text-[11px] text-[#f55f00] tracking-[0.18em] font-bold mb-0.5">OUR SERVICE</div>
+                    <div className="text-[19px] sm:text-[22px] font-black text-[#f55f00]">テレモ</div>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {comparisons.map((c, i) => (
-                  <tr key={i} className="border-b border-[#e5e5e5]">
-                    <td className="py-3 pr-4 text-[13px] font-bold text-black">{c.item}</td>
-                    <td className="py-3 px-4 text-[13px] text-[#999]">{c.others}</td>
-                    <td className="py-3 pl-4 text-[13px] text-black font-bold">{c.telemo}</td>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-[#fafafa]'}>
+                    <td className="py-4 px-3 text-center text-[15px] sm:text-[16px] font-bold text-black border-b border-[#eee]">
+                      {c.item}
+                    </td>
+                    <td className="py-4 px-3 text-center text-[14px] sm:text-[15px] text-[#888] border-b border-[#eee]">
+                      <span className="inline-flex items-center gap-1.5">
+                        <span className="text-[#d94848] text-[14px]">✕</span>
+                        <span>{c.a.v}</span>
+                      </span>
+                    </td>
+                    <td className="py-4 px-3 text-center text-[14px] sm:text-[15px] text-[#888] border-b border-[#eee]">
+                      <span className="inline-flex items-center gap-1.5">
+                        <span className="text-[#d94848] text-[14px]">✕</span>
+                        <span>{c.b.v}</span>
+                      </span>
+                    </td>
+                    <td className="py-4 px-3 text-center text-[15px] sm:text-[16px] font-bold text-black bg-[#fff8f2] border-b border-[#ffd9bd]">
+                      <span className="inline-flex items-center gap-1.5">
+                        <span className="w-[18px] h-[18px] rounded-full bg-[#f55f00] text-white text-[10px] flex items-center justify-center shrink-0">✓</span>
+                        <span>{c.t}</span>
+                      </span>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+
+          <p className="text-[10px] text-[#999] mt-2 text-center">※ 他社の数値は公開情報および業界平均から算出</p>
         </div>
 
-        {/* ===== Trust ===== */}
-        <div
-          className="fade-in rounded-[16px] p-7 sm:p-10 mb-10 relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2d1a0a 100%)' }}
-        >
-          <div className="absolute top-0 right-0 w-[50%] h-full opacity-15" style={{ background: 'radial-gradient(ellipse at 90% 20%, #f55f00 0%, transparent 70%)' }} />
-          <div className="relative z-10">
-            <p className="text-[11px] text-[#f55f00] tracking-[0.15em] font-bold mb-2">サービス設計</p>
-            <p className="text-[20px] sm:text-[24px] font-bold text-white leading-[1.4]">
-              営業経験15年以上のメンバーが設計
-            </p>
-            <p className="text-[13px] text-white/60 mt-2">
-              大手営業代行会社・コールセンター出身のメンバーが、現場の課題をもとにサービスを構築。
-              コールスクリプト設計から進捗管理まで、すべてプロが監修しています。
-            </p>
-          </div>
-        </div>
-
-        <div className="fade-in text-center">
-          <a href="#contact-form" className="btn-accent text-center text-[14px]">
-            現状を教えてください
-          </a>
-        </div>
       </div>
     </section>
   );

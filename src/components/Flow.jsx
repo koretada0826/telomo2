@@ -24,7 +24,7 @@ const flowSteps = [
 export default function Flow() {
   return (
     <section id="flow" className="py-16 sm:py-24 px-5 sm:px-10 bg-white">
-      <div className="max-w-[900px] mx-auto">
+      <div className="max-w-[1240px] mx-auto">
         <p className="fade-in text-[12px] text-[#f55f00] tracking-[0.15em] font-bold mb-3 text-center">
           ご利用の流れ
         </p>
@@ -32,9 +32,13 @@ export default function Flow() {
           最短5営業日でコール開始
         </h2>
 
-        <div className="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {flowSteps.map((s, i) => (
-            <div key={i} className="relative bg-[#f7f7f7] rounded-[16px] p-6">
+            <div
+              key={i}
+              className="fade-in relative bg-[#f7f7f7] rounded-[16px] p-6"
+              style={{ transitionDelay: `${i * 0.18}s` }}
+            >
               <p className="text-[11px] text-[#f55f00] font-bold tracking-[0.1em] mb-3">{s.num}</p>
               <p className="text-[16px] font-bold text-black mb-2 leading-[1.4]">{s.title}</p>
               <p className="text-[12px] text-[#4d4d4d] leading-[1.7]">{s.desc}</p>
