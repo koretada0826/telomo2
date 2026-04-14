@@ -280,6 +280,37 @@
 }
 .comparison-telemo-pulse {
   animation: telemo-pulse 2s ease-in-out infinite;
+  animation-delay: 0s !important;
+}
+
+/* Comparison table - テレモ列セルのパルス */
+@keyframes telemo-cell-pulse {
+  0%, 100% { background-color: #fff8f2; box-shadow: inset 0 0 0 rgba(245,95,0,0); }
+  50% { background-color: #fff0e0; box-shadow: inset 0 0 20px rgba(245,95,0,0.08); }
+}
+.comparison-telemo-cell {
+  animation: telemo-cell-pulse 2s ease-in-out infinite;
+  animation-delay: 0s !important;
+}
+
+/* RECOMMEND badge pulse */
+@keyframes recommend-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+.recommend-pulse {
+  animation: recommend-pulse 2s ease-in-out infinite;
+  animation-delay: 0s !important;
+}
+
+/* テレモ列全体のパルス - 全セル同期 */
+@keyframes telemo-column-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+.telemo-column-pulse {
+  animation: telemo-column-pulse 2s ease-in-out infinite;
+  animation-delay: 0s !important;
 }
 
 /* Custom cursor glow - orange dot following mouse */

@@ -11,8 +11,6 @@ function PriceCountUp() {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
           const target = 14;
-          const duration = 1200;
-          const steps = 28;
           let current = 0;
           const timer = setInterval(() => {
             current++;
@@ -22,7 +20,7 @@ function PriceCountUp() {
             } else {
               setCount(current);
             }
-          }, duration / steps);
+          }, 1200 / 28);
         }
       },
       { threshold: 0.3 }
@@ -34,125 +32,166 @@ function PriceCountUp() {
   return <span ref={ref}>{count}</span>;
 }
 
+const checks = [
+  '月間4,700コール保証',
+  '全コールログ開示',
+  '初期費用なし',
+  '最低契約期間なし',
+  '専任担当者配置',
+  'スクリプト設計込み',
+];
+
 export default function Pricing() {
-  const checks = [
-    '月間4,700コール保証',
-    '全コールログ開示',
-    '初期費用なし',
-    '最低契約期間なし',
-    '専任担当者配置',
-    'スクリプト設計込み',
-  ];
-
   return (
-    <section id="pricing" className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f7f7f7]">
-      <div className="max-w-[1240px] mx-auto text-center">
-        <p className="fade-in text-[13px] sm:text-[14px] text-[#f55f00] tracking-[0.2em] font-bold mb-3">料金プラン</p>
-        <h2 className="fade-in text-[28px] sm:text-[40px] lg:text-[44px] font-black text-black leading-[1.3] tracking-[0.02em] mb-12">
-          シンプルに、<span className="text-[#f55f00]">1プラン</span>だけ。
-        </h2>
+    <section id="pricing" className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f5f5f5]">
+      <div className="max-w-[1240px] mx-auto" style={{ fontFamily: '"Noto Sans JP", sans-serif' }}>
 
-        <div className="fade-in bg-white border-2 border-[#e5e5e5] rounded-[24px] p-8 sm:p-12 lg:p-16 max-w-[960px] mx-auto">
-          {/* === 価格パネル (シンプル/HP統一) === */}
-          <div className="relative max-w-[760px] mx-auto mb-10 text-center">
-            {/* SALES POINT風ラベル + ライン */}
-            <div className="flex items-center gap-3 mb-5">
-              <span className="text-[11px] sm:text-[12px] font-black text-[#f55f00] tracking-[0.3em]">
-                PRICING
-              </span>
-              <span className="flex-1 h-[1px] bg-gradient-to-r from-[#f55f00]/50 to-transparent" />
-              <span className="text-[11px] sm:text-[12px] font-bold text-[#999] tracking-[0.2em]">
-                月額固定／税別
-              </span>
-            </div>
+        {/* カード */}
+        <div
+          className="fade-in max-w-[900px] mx-auto overflow-hidden text-center"
+          style={{
+            background: '#fdfcf8',
+            borderRadius: '8px',
+            boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
+            paddingBottom: '60px',
+          }}
+        >
+          {/* ヘッダー */}
+          <div
+            className="px-5 py-14 sm:py-16"
+            style={{
+              background: '#1a1a1a',
+              backgroundImage: 'radial-gradient(circle at 50% 50%, #333 0%, #1a1a1a 100%)',
+              color: '#fff',
+            }}
+          >
+            <p className="text-[14px] font-bold tracking-[0.3em]" style={{ color: '#d4af37' }}>
+              PRICING
+            </p>
+            <h2
+              className="text-[36px] sm:text-[46px] lg:text-[54px] font-bold my-5"
+              style={{
+                fontFamily: '"Noto Sans JP", sans-serif',
+                background: 'linear-gradient(135deg, #d4af37 0%, #f9f295 45%, #e6be8a 50%, #b8860b 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              シンプルに、1プランだけ。
+            </h2>
+            <p className="text-[14px] sm:text-[15px]" style={{ opacity: 0.7 }}>
+              余計なオプションはありません。必要なものは全部入っています。
+            </p>
+          </div>
 
-            {/* 価格本体 - 中央配置 */}
-            <div className="flex items-end justify-center gap-3 sm:gap-5 mb-2">
+          {/* 価格エリア */}
+          <div className="flex justify-center pt-14 sm:pt-16 pb-2">
+            <div className="relative inline-flex items-end mx-auto">
+              {/* 14 - メタリック加工 + 高級フォント */}
               <span
-                className="text-[100px] sm:text-[130px] lg:text-[160px] font-black leading-[0.85] text-black tracking-tight relative"
-                style={{ fontFamily: '"Noto Sans JP", sans-serif' }}
+                className="leading-none inline-block"
+                style={{
+                  fontFamily: '"Noto Serif JP", serif',
+                  fontSize: 'clamp(120px, 20vw, 180px)',
+                  fontWeight: 900,
+                  background: 'linear-gradient(180deg, #666 0%, #444 20%, #1a1a1a 40%, #000 50%, #1a1a1a 60%, #333 80%, #555 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  letterSpacing: '-4px',
+                  filter: 'drop-shadow(2px 2px 0px rgba(100,100,100,0.5)) drop-shadow(4px 6px 8px rgba(0,0,0,0.35))',
+                }}
               >
                 <PriceCountUp />
               </span>
-              <div className="flex flex-col items-start pb-3 sm:pb-4">
+
+              {/* 万円 - 右下 */}
+              <div className="self-end pb-2 sm:pb-3 ml-2">
                 <span
-                  className="text-[34px] sm:text-[46px] lg:text-[54px] font-black leading-none text-[#f55f00]"
-                  style={{ fontFamily: '"Noto Sans JP", sans-serif' }}
+                  className="inline-block"
+                  style={{
+                    fontFamily: '"Noto Serif JP", serif',
+                    fontSize: 'clamp(30px, 5vw, 46px)',
+                    fontWeight: 700,
+                    background: 'linear-gradient(160deg, #c9a84c 0%, #e8d48b 40%, #b8962e 55%, #dfc56a 70%, #a07b28 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    filter: 'drop-shadow(1px 2px 3px rgba(0,0,0,0.15))',
+                  }}
                 >
                   万円
                 </span>
-                <span className="text-[12px] sm:text-[13px] font-bold text-[#999] tracking-[0.2em] mt-2">
-                  /&nbsp;月
-                </span>
+                <span className="text-[13px] sm:text-[14px] text-[#999] block mt-0.5">（税別）</span>
               </div>
-            </div>
-
-            {/* お洒落な装飾線 */}
-            <div className="flex items-center justify-center gap-3 mb-5">
-              <div className="h-[1px] w-[60px] bg-gradient-to-r from-transparent to-[#f55f00]" />
-              <div className="w-[8px] h-[8px] rounded-full border-2 border-[#f55f00]" />
-              <div className="h-[2px] w-[100px] bg-[#f55f00]" />
-              <div className="w-[8px] h-[8px] rounded-full border-2 border-[#f55f00]" />
-              <div className="h-[1px] w-[60px] bg-gradient-to-l from-transparent to-[#f55f00]" />
-            </div>
-
-            {/* 他社比較 - 価格の下に中央配置 */}
-            <div className="hidden sm:flex items-center justify-center gap-4 mb-4">
-              <p className="text-[16px] sm:text-[18px] font-bold text-[#bbb] line-through leading-none">
-                他社平均 30〜80万円
-              </p>
-              <span className="text-[#f55f00] text-[16px] leading-none">→</span>
-              <p className="text-[13px] font-black text-black tracking-[0.1em] leading-none">
-                約&nbsp;<span className="text-[#f55f00] text-[18px]">1/4</span>&nbsp;のコスト
-              </p>
-            </div>
-
-            {/* 下部アクセント（SALES POINTカード共通グラデーション線） */}
-            <div className="h-[3px] bg-gradient-to-r from-[#f55f00] via-[#f55f00]/40 to-transparent mb-3" />
-
-            {/* 補足注釈 */}
-            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
-              <span className="text-[11px] sm:text-[12px] text-[#666]">
-                <span className="text-[#f55f00] mr-1">/</span>4,700 コール込
-              </span>
-              <span className="text-[11px] sm:text-[12px] text-[#666]">
-                <span className="text-[#f55f00] mr-1">/</span>初期費用 0 円
-              </span>
-              <span className="text-[11px] sm:text-[12px] text-[#666]">
-                <span className="text-[#f55f00] mr-1">/</span>最低契約期間なし
-              </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 max-w-[720px] mx-auto text-left mb-10">
+          {/* 比較フレーム */}
+          <div className="relative max-w-[600px] mx-auto mt-10 mb-10 px-6 py-5" style={{ border: '1px solid #d4af37', background: 'rgba(255,255,255,0.8)', boxShadow: 'inset 0 0 15px rgba(212, 175, 55, 0.1)' }}>
+            {/* 四隅の装飾 */}
+            <div className="absolute -top-[5px] -left-[5px] w-5 h-5 border-t-2 border-l-2 border-[#d4af37]" />
+            <div className="absolute -top-[5px] -right-[5px] w-5 h-5 border-t-2 border-r-2 border-[#d4af37]" />
+            <div className="absolute -bottom-[5px] -left-[5px] w-5 h-5 border-b-2 border-l-2 border-[#d4af37]" />
+            <div className="absolute -bottom-[5px] -right-[5px] w-5 h-5 border-b-2 border-r-2 border-[#d4af37]" />
+            <p className="text-[16px] sm:text-[18px] text-[#555] m-0">
+              他社平均30〜80万円 → <span className="font-bold text-[1.2em]" style={{ color: '#b38728' }}>約1/4のコスト</span>
+            </p>
+          </div>
+
+          {/* 区切り線 */}
+          <div className="relative w-[80%] h-[1px] mx-auto mb-10" style={{ background: 'linear-gradient(90deg, transparent, #d4af37, transparent)' }}>
+            <span
+              className="absolute top-[-10px] left-1/2 -translate-x-1/2 px-5 text-[12px] font-bold tracking-[0.2em]"
+              style={{ background: '#fdfcf8', color: '#b8860b' }}
+            >
+              INCLUDED
+            </span>
+          </div>
+
+          {/* チェックリスト */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-6 sm:px-10">
             {checks.map((item, i) => (
               <div
                 key={i}
-                className="fade-in flex items-center gap-3 sm:gap-4 bg-[#fafafa] border border-[#eee] rounded-[12px] px-5 py-4 sm:py-5"
-                style={{ transitionDelay: `${0.1 + i * 0.12}s` }}
+                className="fade-in flex items-center bg-white px-6 py-6 transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  borderRadius: '4px',
+                  boxShadow: 'inset 0 2px 5px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06)',
+                  border: '1px solid #e6be8a',
+                  transitionDelay: `${0.1 + i * 0.08}s`,
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 10px 25px rgba(212, 175, 55, 0.2)'; e.currentTarget.style.borderColor = '#d4af37'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'inset 0 2px 5px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06)'; e.currentTarget.style.borderColor = '#e6be8a'; }}
               >
-                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#f55f00] text-white text-[14px] sm:text-[16px] flex items-center justify-center shrink-0 font-black">
-                  ✓
-                </span>
-                <span className="text-[16px] sm:text-[18px] text-black font-bold">{item}</span>
+                <div className="w-[3px] h-7 rounded-full shrink-0 mr-5" style={{ background: '#d4af37' }} />
+                <span className="text-[18px] sm:text-[20px] font-bold text-[#333]">{item}</span>
               </div>
             ))}
           </div>
 
-          <div className="bg-[#fef1e7] rounded-[14px] px-6 py-5 sm:px-8 sm:py-6 mb-10 max-w-[720px] mx-auto">
-            <p className="text-[15px] sm:text-[18px] text-[#f55f00] font-black leading-[1.5]">
-              営業1人を雇う費用（月50〜80万円）の約1/4。
-            </p>
-            <p className="text-[13px] sm:text-[14px] text-[#4d4d4d] mt-2 leading-[1.7]">
-              採用・教育・管理コストも一切不要です。
-            </p>
+          {/* CTAボタン */}
+          <div className="mt-14">
+            <a
+              href="#contact-form"
+              className="inline-block px-14 sm:px-20 py-6 text-white font-bold text-[18px] sm:text-[20px] rounded-full no-underline transition-all duration-300 hover:brightness-110 hover:scale-[1.02]"
+              style={{
+                background: 'linear-gradient(180deg, #e67e22 0%, #d35400 100%)',
+                boxShadow: '0 15px 35px rgba(211, 84, 0, 0.4), inset 0 2px 2px rgba(255,255,255,0.3)',
+                border: '1px solid #a04000',
+                animation: 'pricing-cta-pulse 2s ease-in-out infinite',
+              }}
+            >
+              まずは10〜15分だけ話しましょう
+            </a>
           </div>
-
-          <a href="#contact-form" className="btn-accent text-center text-[14px]">
-            まずは10〜15分だけ話しましょう
-          </a>
         </div>
       </div>
+
+      <style>{`
+        @keyframes pricing-cta-pulse {
+          0%, 100% { transform: scale(1); box-shadow: 0 15px 35px rgba(211, 84, 0, 0.4), inset 0 2px 2px rgba(255,255,255,0.3); }
+          50% { transform: scale(1.03); box-shadow: 0 20px 45px rgba(211, 84, 0, 0.5), inset 0 2px 2px rgba(255,255,255,0.3); }
+        }
+      `}</style>
     </section>
   );
 }

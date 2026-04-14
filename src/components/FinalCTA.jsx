@@ -32,20 +32,6 @@ export default function FinalCTA() {
         >
           かけた分だけ、全部見える。それがテレモです。
         </p>
-        <div className="fade-in grid grid-cols-3 gap-6 max-w-[480px] mx-auto mb-10">
-          <div className="text-center">
-            <p className="text-[36px] sm:text-[42px] font-black text-[#f55f00]" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>4,700</p>
-            <p className="text-[13px] text-white/60 font-medium">コール/月</p>
-          </div>
-          <div className="text-center">
-            <p className="text-[36px] sm:text-[42px] font-black text-[#f55f00]" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>14<span className="text-[20px]">万</span></p>
-            <p className="text-[13px] text-white/60 font-medium">月額</p>
-          </div>
-          <div className="text-center">
-            <p className="text-[36px] sm:text-[42px] font-black text-[#f55f00]" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>100<span className="text-[20px]">%</span></p>
-            <p className="text-[13px] text-white/60 font-medium">開示</p>
-          </div>
-        </div>
         <div className="fade-in flex flex-col sm:flex-row gap-3 justify-center">
           <a href="#contact-form" className="btn-accent text-center text-[14px]">
             まずは10〜15分だけ話しましょう

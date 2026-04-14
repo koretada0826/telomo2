@@ -202,18 +202,12 @@ export default function Newcomer() {
               className="group relative bg-white p-7 sm:p-8 overflow-hidden border border-[#e8e8e8] shadow-[0_2px_10px_rgba(0,0,0,0.04)]"
               style={{ transitionDelay: `${i * 0.08}s` }}
             >
-              {/* SALES POINT ラベル (1本化) */}
+              {/* SALES POINT ラベル */}
               <div className="relative flex items-center gap-3 mb-4">
                 <span className="text-[11px] font-black text-[#f55f00] tracking-[0.3em] leading-none">
                   SALES POINT
                 </span>
                 <span className="flex-1 h-[1px] bg-gradient-to-r from-[#f55f00]/40 to-transparent" />
-                <span
-                  className="text-[26px] sm:text-[30px] font-black leading-none text-[#f55f00]"
-                  style={{ fontFamily: '"M PLUS 1p", sans-serif' }}
-                >
-                  {a.no}
-                </span>
               </div>
 
               {/* タグ */}

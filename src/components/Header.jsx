@@ -23,16 +23,16 @@ export default function Header() {
       />
       <div className="max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-10 flex items-center justify-between h-[70px] sm:h-[80px]">
         {/* Logo */}
-        <a href="#" className="text-[22px] sm:text-[28px] font-black tracking-[0.02em] text-black no-underline flex items-center gap-1.5 relative z-10">
-          テレモ
+        <a href="#" className="relative z-10 shrink-0">
+          <img src="/img/logo.png" alt="テレモ" className="h-[40px] sm:h-[50px] w-auto" style={{ mixBlendMode: 'multiply' }} />
         </a>
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          {['経験者の方', '初めての方', '料金', 'ご利用の流れ'].map((label, i) => (
+          {['経験者の方', '初めての方', 'ご利用の流れ', '料金'].map((label, i) => (
             <a
               key={i}
-              href={['#experienced', '#newcomer', '#pricing', '#flow'][i]}
+              href={['#experienced', '#newcomer', '#flow', '#pricing'][i]}
               className="text-[14px] text-[#333] font-bold no-underline px-5 py-2.5 rounded-full bg-[#f8f8f8] hover:bg-[#f0f0f0] hover:text-[#f55f00] transition-all relative group cursor-pointer"
             >
               {label}

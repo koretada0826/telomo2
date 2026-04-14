@@ -16,13 +16,13 @@ export default function ComparisonTable() {
           COMPARISON
         </p>
         <h2 className="fade-in text-[28px] sm:text-[40px] lg:text-[44px] font-black text-black leading-[1.3] tracking-[0.02em] mb-4 text-center">
-          テレモと<span className="text-[#f55f00]">他社</span>の違い
+          <span className="comparison-telemo-pulse">テレモ</span>と<span className="text-[#f55f00]">他社</span>の違い
         </h2>
         <p className="fade-in text-[15px] sm:text-[16px] text-[#4d4d4d] text-center mb-12">
           同じ「営業代行」でも、中身はまったく違います。
         </p>
 
-        <div className="fade-in overflow-x-auto">
+        <div className="fade-in">
           <table className="w-full border-collapse min-w-[640px]">
             {/* ヘッダー */}
             <thead>
@@ -37,8 +37,8 @@ export default function ComparisonTable() {
                   <p className="text-[11px] text-[#bbb] tracking-[0.15em] font-bold mb-1">COMPANY</p>
                   <p className="text-[18px] sm:text-[22px] font-black text-[#666]">B社</p>
                 </th>
-                <th className="bg-[#f55f00] border border-[#f55f00] p-4 sm:p-5 text-center w-[36%]">
-                  <p className="bg-black text-white text-[10px] font-black tracking-[0.2em] px-4 py-1.5 inline-block mb-2">RECOMMEND</p>
+                <th className="bg-[#f55f00] border border-[#f55f00] p-4 sm:p-5 text-center w-[36%] telemo-column-pulse">
+                  <p className="bg-black text-white text-[10px] font-black tracking-[0.2em] px-4 py-1.5 inline-block mb-2 recommend-pulse">RECOMMEND</p>
                   <p className="text-[11px] text-white/70 tracking-[0.15em] font-bold mb-1">OUR SERVICE</p>
                   <p className="text-[20px] sm:text-[24px] font-black text-white comparison-telemo-pulse">テレモ</p>
                 </th>
@@ -58,7 +58,7 @@ export default function ComparisonTable() {
                   <td className="bg-white border border-[#e5e5e5] p-4 sm:p-5 text-center">
                     <span className="text-[13px] sm:text-[15px] text-[#999]">{r.b}</span>
                   </td>
-                  <td className="bg-[#fff8f2] border border-[#ffd9bd] p-4 sm:p-5 text-center">
+                  <td className="bg-[#fff8f2] border border-[#ffd9bd] p-4 sm:p-5 text-center comparison-telemo-cell telemo-column-pulse">
                     <span className="text-[14px] sm:text-[16px] text-[#f55f00] font-black">{r.telemo}</span>
                   </td>
                 </tr>

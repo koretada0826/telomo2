@@ -49,22 +49,22 @@ export default function ConsultationCTA() {
           {/* 右: 無料相談で聞けること */}
           <div className="fade-in">
             <div className="bg-white/[0.06] border border-white/10 rounded-none p-6 sm:p-8">
-              <p className="text-[14px] sm:text-[15px] text-white font-bold mb-6">
+              <p className="text-[18px] sm:text-[20px] text-white font-black mb-8">
                 無料相談で聞けること
               </p>
               <div className="space-y-0">
                 {points.map((p, i) => (
-                  <div key={i} className={`flex gap-4 items-start py-4 ${i < points.length - 1 ? 'border-b border-white/10' : ''}`}>
-                    <span className="text-[14px] font-black text-[#f55f00] mt-0.5 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                  <div key={i} className={`flex gap-5 items-start py-5 sm:py-6 ${i < points.length - 1 ? 'border-b border-white/10' : ''}`}>
+                    <span className="text-[18px] sm:text-[20px] font-black text-[#f55f00] mt-0.5 shrink-0">{String(i + 1).padStart(2, '0')}</span>
                     <div>
-                      <p className="text-[15px] sm:text-[16px] text-white font-bold mb-1">{p.title}</p>
-                      <p className="text-[13px] sm:text-[14px] text-white/50 leading-[1.7]">{p.desc}</p>
+                      <p className="text-[18px] sm:text-[20px] text-white font-bold mb-2">{p.title}</p>
+                      <p className="text-[15px] sm:text-[16px] text-white/50 leading-[1.8]">{p.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
               <div className="mt-6 pt-5 border-t border-white/10">
-                <div className="flex flex-wrap gap-4 text-[13px] text-white/50">
+                <div className="flex flex-wrap gap-5 text-[15px] sm:text-[16px] text-white/50">
                   <span>所要時間：10〜15分</span>
                   <span>費用：無料</span>
                   <span>売り込み：なし</span>
