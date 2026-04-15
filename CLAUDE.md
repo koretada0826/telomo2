@@ -12,22 +12,22 @@
 - `src/components/Hero.jsx` — ファーストビュー。見出し「結果ゼロの営業代行に、もう払わなくていい／AI × 営業のプロで、最高の営業代行を。」＋ 2分岐カード（NEWCOMER=左/EXPERIENCED=右）
 - `src/components/Experienced.jsx` — 経験者向けセクション。以下のサブブロックを持つ：
   - `#service-intro`: テレモは… + Laurels (97%/15%/88%)
-  - `#pain-points`: 口コミ風ジグザグ吹き出し5つ（左右 col-span-6 ＋ 小gap）
-  - TELEMO ANSWER: 「私たちはこうします」横長リスト5枚
+  - WHAT IS SALES OUTSOURCING: 「そもそも、営業代行サービスって？」説明ブロック（白カード＋黒枠＋オレンジ影）
+  - `#pain-points`: 口コミ風ジグザグ吹き出し4つ（01契約の縛り/02ブラックボックス/03ブランド毀損/04営業知見ゼロ）
+  - TELEMO ANSWER: 「私たちはこうします」横長リスト4枚
   - HUMAN × AI: 人間の営業 vs テレモ の比較テーブル（白背景）
-  - VS OTHER AI SALES: 他AI営業代行との差別化 narrative
-- `src/components/Newcomer.jsx` — 初めての方向け
-- `src/components/ComparisonTable.jsx` — 人間の営業 vs テレモ（プロ×AI）比較表
+  - VS OTHER AI SALES: 他AI営業代行との差別化 narrative（3ブロック段落構成＋TELEMO仕切り線＋締め）
+- `src/components/Newcomer.jsx` — 初めての方向け。STEPカード3枚（コスト/スピード/集中）＋ CTAボタンのみ
+- `src/components/ComparisonTable.jsx` — 人間の営業 vs テレモ（プロ×AI）比較表（単独セクションは削除済み、Experienced内に統合）
 - `src/components/Pricing.jsx` / `Flow.jsx` / `FAQ.jsx` / `Footer.jsx` 他
 
 ## 訴求ポイント（整合性に注意）
-- 月額 14万円
 - 月間 4,700コール保証
 - 全コール100%ログ開示
-- 初期費用 0円
 - 契約縛りなし
 - **営業歴15年、上場企業で営業統括を務めた経験者が設計したAI営業代行**
 - 他のAI営業代行とは「設計の起点が違う」（向こうは営業知見ゼロのエンジニア製）
+- ※ 月額14万円・初期費用0円 はHero/Experienced/Newcomerからは削除済み（Pricingセクションに集約）
 
 ## デザインルール
 - アクセントカラー: `#f55f00`（オレンジ）
@@ -54,5 +54,6 @@
 ## Git remote
 - `origin` = https://github.com/koretada0826/teremo.git（現在のghデフォルトアカウントでは403）
 - `kazujp` = https://github.com/kazujp225/telomo.git（"telomo"、eなし）
-- push時は `gh auth switch -u kazujp225` → `git push kazujp main`
-- 公開リンク: https://github.com/kazujp225/telomo
+- `koretada2` = https://github.com/koretada0826/telomo2.git（PATトークン必要、kazujp225では403）
+- push時は `git push kazujp main` と `git push koretada2 main`（koretada2はPATトークンでURL直push）
+- 公開リンク: https://github.com/kazujp225/telomo / https://github.com/koretada0826/telomo2

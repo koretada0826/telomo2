@@ -13,7 +13,7 @@ const branches = [
     tagJa: 'はじめての方',
     title: 'そもそも営業代行って何？',
     desc: '人を雇うより安く・多く・全部見える営業代行です。',
-    bullets: ['初期費用0円', '4,700コール保証', 'スクリプト込み'],
+    bullets: ['4,700コール保証', 'スクリプト込み'],
     href: '#service-intro',
     cta: 'はじめての方向けに見る',
     isDark: false,
@@ -23,7 +23,7 @@ const branches = [
     tagJa: '利用経験がある方',
     title: '「成果ゼロ」で悩んでいませんか',
     desc: '高額・不透明・長期縛り。全部逆に設計しました。',
-    bullets: ['全ログ開示', '月額14万円', '縛りなし'],
+    bullets: ['全ログ開示', '縛りなし'],
     href: '#pain-points',
     cta: '経験者向けに見る',
     isDark: true,
@@ -88,20 +88,7 @@ export default function Hero() {
             <span className="text-[#f55f00]">AI × 営業のプロで、最高の営業代行を。</span>
           </h1>
 
-          {/* 補足コピー - 強調バッジ */}
-          <div className="fade-in mt-5 sm:mt-6 flex flex-wrap justify-center items-stretch gap-2.5 sm:gap-3">
-            {['月額14万円', '全ログ開示', '契約縛りなし'].map((item, i) => (
-              <span
-                key={i}
-                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white border-2 border-black text-[13px] sm:text-[16px] font-black text-black tracking-[0.03em] shadow-[3px_3px_0_0_#f55f00] transition-transform duration-300 hover:-translate-y-[2px]"
-              >
-                <span className="inline-block w-[6px] h-[6px] rounded-full bg-[#f55f00]" />
-                {item}
-              </span>
-            ))}
-          </div>
-
-          <p className="fade-in mt-5 sm:mt-6 text-[15px] sm:text-[18px] lg:text-[20px] font-bold text-[#333] leading-[1.5]">
+          <p className="fade-in mt-6 sm:mt-8 text-[15px] sm:text-[18px] lg:text-[20px] font-bold text-[#333] leading-[1.5]">
             まずは<span className="text-[#f55f00]">あなたに合うほう</span>からご覧ください。
           </p>
         </div>

@@ -38,11 +38,11 @@ function CountUp({ target, suffix }) {
 
 const painVoices = [
   {
-    tag: '引き延ばし',
-    quote: '半年以上払い続けたのにアポは片手で数えるほど。\n「もう少し続ければ」と言われ続けた。',
+    tag: '契約の縛り',
+    quote: '半年払ってもアポは片手で数えるほど。\n解約しても請求書だけ届き続けた。',
     author: '製造業 / 取締役',
-    answer: '最低契約期間なし・月額14万円。合わないと思った瞬間に止められます。',
-    answerPoints: ['縛りなし', '月額14万円', '毎日数値共有'],
+    answer: '最低契約期間・解約料ともにゼロ。1ヶ月単位の更新で翌月解約OK。"辞めたいのに辞められない"が起きません。',
+    answerPoints: ['縛りなし', '解約料ゼロ', '1ヶ月単位で更新'],
   },
   {
     tag: 'ブラックボックス',
@@ -57,13 +57,6 @@ const painVoices = [
     author: 'SaaS / 事業責任者',
     answer: '営業経験15年のプロがスクリプト設計。録音で品質を毎日チェックできます。',
     answerPoints: ['プロ設計', '毎日レビュー', 'ブランド保全'],
-  },
-  {
-    tag: '解約トラブル',
-    quote: '解約したのに、請求書だけ届き続けた。\n辞めるのにもお金がかかった。',
-    author: 'コンサル / 代表',
-    answer: '最低契約期間・解約料ともにゼロ。1ヶ月単位の更新で翌月解約OK。',
-    answerPoints: ['解約料0円', '1ヶ月更新', '初期費用0円'],
   },
   {
     tag: '営業知見ゼロ',
@@ -415,6 +408,40 @@ export default function Experienced() {
         {/* ===== Achievements (gold laurel) ===== */}
         <AchievementsAwards />
 
+        {/* ===== 営業代行サービスって何？ 説明ブロック ===== */}
+        <div className="fade-in max-w-[960px] mx-auto my-14 sm:my-20 bg-white border-2 border-black p-6 sm:p-10 lg:p-12" style={{ boxShadow: '8px 8px 0 0 #f55f00' }}>
+          <p className="inline-flex items-center gap-3 text-[11px] sm:text-[13px] text-[#f55f00] tracking-[0.3em] font-black mb-4">
+            <span className="w-8 h-[2px] bg-[#f55f00]" />
+            WHAT IS SALES OUTSOURCING
+          </p>
+          <h3 className="text-[24px] sm:text-[34px] lg:text-[40px] font-black text-black leading-[1.3] mb-6 sm:mb-8">
+            そもそも、<span className="text-[#f55f00]">営業代行サービス</span>って？
+          </h3>
+
+          <p className="text-[15px] sm:text-[18px] lg:text-[20px] text-[#333] leading-[1.95] font-medium mb-5">
+            営業代行とは、
+            <span className="font-black text-black">貴社の代わりに新規開拓の営業活動を行うサービス</span>
+            のことです。
+          </p>
+          <p className="text-[14px] sm:text-[17px] text-[#333] leading-[1.95] font-medium mb-6 sm:mb-8">
+            ターゲットリストの作成、トークスクリプトの設計、テレアポ・商談打診までを一気通貫で代行。
+            <br className="hidden sm:inline" />
+            「営業人員を雇う余裕はないが、売上は伸ばしたい」企業の <span className="font-black text-[#f55f00]">最短の解</span> として、多くの会社が導入しています。
+          </p>
+
+          {/* 締め */}
+          <div className="pt-5 sm:pt-6 border-t border-[#eee]">
+            <p className="text-[14px] sm:text-[17px] lg:text-[18px] font-bold text-[#333] leading-[1.8]">
+              ただし、営業代行なら何でも良いわけではありません。
+              <br className="hidden sm:inline" />
+              <span className="font-black text-black">選び方を間違えると、高額な費用だけ取られて成果が出ないことも。</span>
+            </p>
+            <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] font-bold text-[#333] leading-[1.8]">
+              次のセクションでは、そんな「失敗する営業代行」の典型例をお見せします。
+            </p>
+          </div>
+        </div>
+
         {/* ===== Pain points - reference style ===== */}
         <div id="pain-points" className="mb-16 sm:mb-20 scroll-mt-[80px]">
           {/* Big centered heading */}
@@ -440,7 +467,6 @@ export default function Experienced() {
                 { col: 'md:col-span-6 md:col-start-7',  offset: 'md:mt-14' },
                 { col: 'md:col-span-6 md:col-start-1',  offset: 'md:-mt-4' },
                 { col: 'md:col-span-6 md:col-start-7',  offset: 'md:mt-10' },
-                { col: 'md:col-span-6 md:col-start-1',  offset: 'md:-mt-4' },
               ];
               const L = layouts[i];
               const tailSide = i % 2 === 0 ? 'left' : 'right';
@@ -683,20 +709,60 @@ export default function Experienced() {
               <span className="w-6 h-[2px] bg-[#f55f00]" />
               VS. OTHER AI SALES
             </p>
-            <h4 className="text-[22px] sm:text-[30px] lg:text-[38px] font-black text-black leading-[1.3] mb-6">
-              他のAI営業代行と、<span className="text-[#f55f00]">一緒にしないでください。</span>
+            <h4 className="text-[22px] sm:text-[30px] lg:text-[38px] font-black text-black leading-[1.3] mb-8">
+              他のAI営業代行と<span className="text-[#f55f00]">一緒にしないでください</span>
             </h4>
-            <p className="text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
-              世の中のAI営業代行の多くは、<span className="font-black text-black">営業知見ゼロのエンジニアが作ったツール</span>です。
-              どれだけ技術が優れていても、「何を話すか」「どこで引くか」「どう刺すか」——この判断こそが<span className="font-black text-[#f55f00]">営業の急所</span>。そこを知らずに設計された営業は、結局"<span className="font-black">それっぽいだけ</span>"で、売上にはつながりません。
-              <br className="hidden sm:inline" />
-              <br className="hidden sm:inline" />
-              テレモは違います。<span className="font-black text-black">営業歴15年、上場企業で営業統括を務めた経験者が設計した、最強のAI営業代行</span>です。
-              現場で鍛え上げたスクリプト・KPI・改善ロジックに、AIの実行力と分析力を乗せる。「人が設計し、AIが動かし、人が磨く」——この順番でしか、売れる営業は再現できません。
-              <br className="hidden sm:inline" />
-              <br className="hidden sm:inline" />
-              <span className="font-black text-black">他のAI営業代行と、テレモを同じ土俵で比べないでください。</span>設計の起点が、そもそも違います。
-            </p>
+
+            {/* ブロック1: 他社批判 */}
+            <div className="mb-7 sm:mb-9">
+              <p className="text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
+                世の中のAI営業代行の多くは、
+                <span className="font-black text-black">営業知見ゼロのエンジニアが作ったツール</span>
+                です。
+              </p>
+              <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
+                どれだけ技術が優れていても、「何を話すか」「どこで引くか」「どう刺すか」——
+                この判断こそが<span className="font-black text-[#f55f00]">営業の急所</span>。
+              </p>
+              <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
+                そこを知らずに設計された営業は、結局"<span className="font-black">それっぽいだけ</span>"で、売上にはつながりません。
+              </p>
+            </div>
+
+            {/* 仕切り */}
+            <div className="flex items-center gap-3 my-6 sm:my-8">
+              <span className="h-[2px] flex-1 bg-[#f55f00]/30" />
+              <span className="text-[11px] sm:text-[12px] font-black text-[#f55f00] tracking-[0.3em]">TELEMO</span>
+              <span className="h-[2px] flex-1 bg-[#f55f00]/30" />
+            </div>
+
+            {/* ブロック2: テレモは違う */}
+            <div className="mb-7 sm:mb-9">
+              <p className="text-[15px] sm:text-[18px] lg:text-[20px] font-black text-black leading-[1.7] mb-3">
+                テレモは、違います。
+              </p>
+              <p className="text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
+                <span className="font-black text-black">営業歴15年、上場企業で営業統括を務めた経験者が設計した、最強のAI営業代行</span>
+                です。
+              </p>
+              <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
+                現場で鍛え上げたスクリプト・KPI・改善ロジックに、AIの実行力と分析力を乗せる。
+              </p>
+              <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
+                「人が設計し、AIが動かし、人が磨く」——
+                この順番でしか、売れる営業は再現できません。
+              </p>
+            </div>
+
+            {/* 締め */}
+            <div className="pt-5 sm:pt-6 border-t-2 border-[#f55f00]/30">
+              <p className="text-[15px] sm:text-[19px] lg:text-[22px] font-black text-black leading-[1.6]">
+                他のAI営業代行と、<span className="text-[#f55f00]">テレモを同じ土俵で比べないでください。</span>
+              </p>
+              <p className="mt-2 text-[13px] sm:text-[16px] text-[#555] font-bold">
+                設計の起点が、そもそも違います。
+              </p>
+            </div>
           </div>
 
           {/* ===== 下部: セールスブースト文 ===== */}
