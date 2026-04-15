@@ -1,31 +1,28 @@
 const columns = [
   {
-    rank: 1,
+    rank: null,
+    name: '人間の営業担当',
+    subLabel: '雇用 / 他社の営業代行',
+    isUs: false,
+  },
+  {
+    rank: null,
     name: 'テレモ',
+    subLabel: '営業プロ × AI',
     isUs: true,
-    badge: 'RECOMMEND',
-  },
-  {
-    rank: 2,
-    name: 'A社',
-    isUs: false,
-  },
-  {
-    rank: 3,
-    name: 'B社',
-    isUs: false,
   },
 ];
 
-// 値の並びは columns と同じ順（テレモ→A社→B社）
+// 値の並びは columns と同じ順（人 → テレモ）
 const rows = [
-  { item: '月額費用',   values: ['14万円',            '30〜50万円',      '50〜80万円'] },
-  { item: 'コール数',   values: ['4,700コール保証',    '非公開',          '月2,000コール〜'] },
-  { item: 'ログ開示',   values: ['全コール100%開示',   'サマリーのみ',     '一部のみ'] },
-  { item: '初期費用',   values: ['0円',               '10〜20万円',      '20〜30万円'] },
-  { item: '契約期間',   values: ['縛りなし',          '3ヶ月縛り',       '6ヶ月縛り'] },
-  { item: 'レポート',   values: ['リアルタイム共有',   '月1回PDFのみ',    '月1回+面談'] },
-  { item: 'スクリプト', values: ['無料で設計込み',     '別途10万円〜',    '別途20万円〜'] },
+  { item: '稼働時間',     values: ['平日8時間',            '24時間365日稼働'] },
+  { item: '月間コール数', values: ['500〜1,000件',         '4,700コール保証'] },
+  { item: '品質のムラ',   values: ['体調・気分で変動',      '常に一定・再現性あり'] },
+  { item: '通話ログ',     values: ['担当メモのみ',          '全通話を100%記録・文字起こし'] },
+  { item: '会話分析',     values: ['担当の感覚',            'AIが接続率・刺さるトークを数値化'] },
+  { item: 'トーク改善',   values: ['個人の経験則',          '全データから学習・最適化'] },
+  { item: '戦力化までの期間', values: ['採用+教育で3〜6ヶ月',  '翌月から即稼働'] },
+  { item: 'コスト',       values: ['月50〜80万円／人',     '月14万円'] },
 ];
 
 export default function ComparisonTable() {
@@ -33,13 +30,13 @@ export default function ComparisonTable() {
     <section className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f7f7f7]">
       <div className="max-w-[1240px] mx-auto">
         <p className="fade-in text-[13px] sm:text-[14px] text-[#f55f00] tracking-[0.2em] font-bold mb-3 text-center">
-          RANKING
+          HUMAN vs TELEMO
         </p>
         <h2 className="fade-in text-[28px] sm:text-[40px] lg:text-[44px] font-black text-black leading-[1.3] tracking-[0.02em] mb-4 text-center">
-          営業代行<span className="text-[#f55f00]">コスパ</span>ランキング
+          人の営業と、<span className="text-[#f55f00]">AI営業</span>はここが違う
         </h2>
         <p className="fade-in text-[18px] sm:text-[22px] text-[#4d4d4d] text-center mb-12 leading-[1.7]">
-          費用・コール数・透明性・契約条件の4指標で総合評価しました。
+          稼働量・品質・データ活用、どの切り口でもAIが勝る理由を一覧化しました。
         </p>
 
         {/* Desktop: テーブル表示 (md以上) */}
@@ -47,29 +44,27 @@ export default function ComparisonTable() {
           <table className="w-full border-collapse">
             <thead>
               <tr>
-                <th className="bg-[#fafafa] border border-[#e5e5e5] p-4 sm:p-5 text-center w-[16%]">
-                  <p className="text-[11px] text-[#bbb] tracking-[0.2em] font-bold">RANK</p>
+                <th className="bg-[#fafafa] border border-[#e5e5e5] p-4 sm:p-5 text-center w-[20%]">
+                  <p className="text-[11px] text-[#bbb] tracking-[0.2em] font-bold">ITEM</p>
                 </th>
                 {columns.map((c, i) => (
                   <th
                     key={i}
                     className={`border p-4 sm:p-5 text-center ${
                       c.isUs
-                        ? 'bg-[#f55f00] border-[#f55f00] w-[36%]'
-                        : 'bg-white border-[#e5e5e5] w-[24%]'
+                        ? 'bg-[#f55f00] border-[#f55f00] w-[44%]'
+                        : 'bg-white border-[#e5e5e5] w-[36%]'
                     }`}
                   >
-                    <div className="flex items-center justify-center mb-2">
-                      <span
-                        className={`text-[22px] sm:text-[28px] font-black leading-none ${
-                          c.isUs ? 'text-white' : 'text-[#666]'
-                        }`}
-                      >
-                        {c.rank}<span className="text-[12px] sm:text-[14px] ml-0.5">位</span>
-                      </span>
-                    </div>
                     <p
-                      className={`text-[20px] sm:text-[24px] font-black ${
+                      className={`text-[10px] sm:text-[11px] tracking-[0.2em] font-bold mb-1 ${
+                        c.isUs ? 'text-white/70' : 'text-[#bbb]'
+                      }`}
+                    >
+                      {c.subLabel}
+                    </p>
+                    <p
+                      className={`text-[20px] sm:text-[26px] font-black ${
                         c.isUs ? 'text-white' : 'text-[#666]'
                       }`}
                     >
@@ -126,22 +121,20 @@ export default function ComparisonTable() {
             >
               {/* カードヘッダー */}
               <div className={`px-5 py-5 ${c.isUs ? 'bg-[#f55f00]' : 'bg-[#fafafa]'}`}>
-                <div className="flex items-baseline gap-2">
-                  <span
-                    className={`text-[32px] font-black leading-none ${
-                      c.isUs ? 'text-white' : 'text-[#666]'
-                    }`}
-                  >
-                    {c.rank}<span className="text-[14px] ml-0.5">位</span>
-                  </span>
-                  <span
-                    className={`text-[22px] font-black leading-none ${
-                      c.isUs ? 'text-white' : 'text-[#333]'
-                    }`}
-                  >
-                    {c.name}
-                  </span>
-                </div>
+                <p
+                  className={`text-[10px] tracking-[0.2em] font-bold mb-1 ${
+                    c.isUs ? 'text-white/70' : 'text-[#bbb]'
+                  }`}
+                >
+                  {c.subLabel}
+                </p>
+                <p
+                  className={`text-[22px] font-black leading-none ${
+                    c.isUs ? 'text-white' : 'text-[#333]'
+                  }`}
+                >
+                  {c.name}
+                </p>
               </div>
 
               {/* スペック */}
