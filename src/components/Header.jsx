@@ -28,17 +28,22 @@ export default function Header() {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-6">
           {['経験者の方', '初めての方', 'ご利用の流れ', '料金'].map((label, i) => (
             <a
               key={i}
               href={['#experienced', '#newcomer', '#flow', '#pricing'][i]}
-              className="text-[14px] text-[#333] font-bold no-underline px-5 py-2.5 rounded-full bg-[#f8f8f8] hover:bg-[#f0f0f0] hover:text-[#f55f00] transition-all relative group cursor-pointer"
+              className="group inline-flex items-center gap-1.5 text-[14px] text-[#333] font-bold no-underline hover:text-[#f55f00] transition-colors cursor-pointer"
             >
               {label}
-              <span className="text-[10px] text-[#999] ml-1 group-hover:text-[#f55f00] transition-colors">∨</span>
-              {/* Bottom accent line on hover */}
-              <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-[#f55f00] rounded-full transition-all duration-300 group-hover:w-[60%]" />
+              <svg
+                className="w-[8px] h-[8px] text-[#999] group-hover:text-[#f55f00] transition-colors"
+                viewBox="0 0 10 10"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M1 3 L5 7 L9 3 Z" />
+              </svg>
             </a>
           ))}
         </nav>

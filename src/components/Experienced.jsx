@@ -633,10 +633,13 @@ export default function Experienced() {
 
         {/* Punchline */}
         <div className="fade-in text-center mb-14 pt-8 sm:pt-12">
-          <h3 className="text-[32px] sm:text-[44px] lg:text-[52px] font-black text-black leading-[1.3] tracking-[0.02em]">
+          <h3 className="text-[22px] sm:text-[28px] lg:text-[32px] font-bold text-[#666] leading-[1.3] tracking-[0.02em]">
             全部、よくある話です。
           </h3>
-          <p className="text-[16px] sm:text-[18px] text-[#4d4d4d] mt-4">だから私たちは、すべてを逆に設計しました。</p>
+          <p className="text-[32px] sm:text-[48px] lg:text-[56px] font-black text-black leading-[1.3] tracking-[0.02em] mt-5">
+            だから私たちは<br />
+            <span className="text-[#f55f00]">すべてを逆に設計しました</span>
+          </p>
         </div>
 
       </div>

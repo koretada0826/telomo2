@@ -116,8 +116,10 @@ export default function Newcomer() {
 
         {/* Transition */}
         <div className="fade-in text-center mb-10">
-          <p className="text-[15px] text-[#4d4d4d] mb-3">だから、営業代行という選択肢。</p>
-          <h3 className="text-[24px] sm:text-[32px] font-bold text-black leading-[1.4] tracking-[0.04em]">
+          <p className="text-[24px] sm:text-[34px] lg:text-[40px] font-black text-black leading-[1.3] tracking-[0.02em] mb-4">
+            だから、<span className="text-[#f55f00]">営業代行</span>という選択肢
+          </p>
+          <h3 className="text-[18px] sm:text-[22px] font-bold text-[#666] leading-[1.4] tracking-[0.04em]">
             でも、ほとんどの営業代行は失敗します。
           </h3>
         </div>
