@@ -2,22 +2,22 @@ const steps = [
   {
     num: '01',
     tag: 'コスト',
-    heading: '採用も教育も\nコストゼロ',
-    body: '営業1人を雇うと月50〜80万円。採用・教育期間の負担も不要で、即戦力を確保できます。',
-    highlight: { label: '削減できる費用', value: '月50万〜', note: '採用+教育コストも別途なし' },
+    heading: '人件費の実態を\n知っていますか',
+    body: '給与だけじゃない。社会保険（約15%）・交通費（約1万円/月）・残業/有給（約10%増）・教育コスト・管理コスト。そして最大のリスクは離職。採用→教育→戦力化→離職→再採用のループ。',
+    highlight: { label: '隠れコスト合計', value: '月50万〜', note: '給与+社保+交通費+教育+管理+離職リスク' },
   },
   {
     num: '02',
-    tag: 'スピード',
-    heading: '翌月から\n即稼働できる',
-    body: '自社で営業組織をゼロから作るのに比べ、契約から最短翌月には架電を開始できます。',
-    highlight: { label: '稼働開始まで', value: '最短1ヶ月', note: '契約から翌月には実行開始' },
+    tag: '��レモ',
+    heading: '離職なし\n感情ブレなし',
+    body: '離職なし・教育不要・感情ブレなし・パフォーマンス一定。止まらず、忠実に、∞に稼働し続けます。月間22,000コール、人で換算すると約5人分。',
+    highlight: { label: 'テレモの稼働量', value: '22,000コール/月', note: '※人の場合：200コール/日 × 22日 = 約4,400コール' },
   },
   {
     num: '03',
     tag: '集中',
     heading: '本業に\n集中できる',
-    body: '新規開拓をプロに任せれば、自社は商品開発や顧客フォローなどコア業務に専念できます。',
+    body: '新��開拓をプロに任せれば、自社は商品開発や顧客フォローな���コア業務に専念できます。',
     highlight: { label: '営業工数', value: '実質 0', note: '自社の強みに時間を使える' },
   },
 ];
@@ -27,11 +27,11 @@ export default function Newcomer() {
   return (
     <section id="newcomer" className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f7f7f7]">
       <div className="max-w-[1240px] mx-auto">
-        <p className="fade-in text-[12px] text-[#f55f00] tracking-[0.15em] font-bold mb-3">
+        <p className="fade-in text-[12px] text-[#41ac86] tracking-[0.15em] font-bold mb-3">
           営業代行を使ったことがない方へ
         </p>
         <h2 className="fade-in text-[28px] sm:text-[40px] lg:text-[44px] font-black text-black leading-[1.3] tracking-[0.02em] mb-10">
-          営業の課題、<span className="text-[#f55f00]">こう解決</span>します
+          営業の課題、<span className="text-[#41ac86]">こう解決</span>します
         </h2>
 
         {/* Steps - impact cards */}
@@ -58,17 +58,17 @@ export default function Newcomer() {
                 </span>
                 {/* 巨大番号 */}
                 <div className="flex items-end gap-2 -mt-1">
-                  <span className="text-[96px] sm:text-[120px] font-black leading-[0.85] text-[#f55f00]">
+                  <span className="text-[96px] sm:text-[120px] font-black leading-[0.85] text-[#41ac86]">
                     {s.num}
                   </span>
                   {/* 斜めアクセントバー */}
                   <span className="block w-[10px] h-[60px] sm:h-[72px] bg-black -skew-x-[20deg] mb-3" />
-                  <span className="block w-[4px] h-[60px] sm:h-[72px] bg-[#f55f00] -skew-x-[20deg] mb-3" />
+                  <span className="block w-[4px] h-[60px] sm:h-[72px] bg-[#41ac86] -skew-x-[20deg] mb-3" />
                 </div>
                 {/* アンダーライン */}
                 <div className="flex items-center gap-2 mt-2">
                   <span className="h-[3px] flex-1 bg-black" />
-                  <span className="h-[3px] w-[20%] bg-[#f55f00]" />
+                  <span className="h-[3px] w-[20%] bg-[#41ac86]" />
                 </div>
               </div>
 
@@ -88,7 +88,7 @@ export default function Newcomer() {
                   <span className="text-[11px] text-[#999] font-bold tracking-[0.1em]">{s.highlight.label}</span>
                 </div>
                 <p
-                  className="text-[26px] sm:text-[30px] font-black text-[#f55f00] leading-none mb-1"
+                  className="text-[26px] sm:text-[30px] font-black text-[#41ac86] leading-none mb-1"
                   style={{ fontFamily: '"M PLUS 1p", sans-serif' }}
                 >
                   {s.highlight.value}

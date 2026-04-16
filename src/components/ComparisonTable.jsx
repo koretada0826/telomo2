@@ -16,7 +16,7 @@ const columns = [
 // 値の並びは columns と同じ順（人 → テレモ）
 const rows = [
   { item: '稼働時間',     values: ['平日8時間',            '24時間365日稼働'] },
-  { item: '月間コール数', values: ['500〜1,000件',         '4,700コール保証'] },
+  { item: '月間コール数', values: ['500〜1,000件',         '22,000コール（約5��分）'] },
   { item: '品質のムラ',   values: ['体調・気分で変動',      '常に一定・再現性あり'] },
   { item: '通話ログ',     values: ['担当メモのみ',          '全通話を100%記録・文字起こし'] },
   { item: '会話分析',     values: ['担当の感覚',            'AIが接続率・刺さるトークを数値化'] },
@@ -29,11 +29,11 @@ export default function ComparisonTable() {
   return (
     <section className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f7f7f7]">
       <div className="max-w-[1240px] mx-auto">
-        <p className="fade-in text-[13px] sm:text-[14px] text-[#f55f00] tracking-[0.2em] font-bold mb-3 text-center">
+        <p className="fade-in text-[13px] sm:text-[14px] text-[#41ac86] tracking-[0.2em] font-bold mb-3 text-center">
           HUMAN vs TELEMO
         </p>
         <h2 className="fade-in text-[28px] sm:text-[40px] lg:text-[44px] font-black text-black leading-[1.3] tracking-[0.02em] mb-4 text-center">
-          人の営業と、<span className="text-[#f55f00]">AI営業</span>はここが違う
+          人の営業と、<span className="text-[#41ac86]">AI営業</span>はここが違う
         </h2>
         <p className="fade-in text-[18px] sm:text-[22px] text-[#4d4d4d] text-center mb-12 leading-[1.7]">
           稼働量・品質・データ活用、どの切り口でもAIが勝る理由を一覧化しました。
@@ -52,7 +52,7 @@ export default function ComparisonTable() {
                     key={i}
                     className={`border p-4 sm:p-5 text-center ${
                       c.isUs
-                        ? 'bg-[#f55f00] border-[#f55f00] w-[44%]'
+                        ? 'bg-[#41ac86] border-[#41ac86] w-[44%]'
                         : 'bg-white border-[#e5e5e5] w-[36%]'
                     }`}
                   >
@@ -88,14 +88,14 @@ export default function ComparisonTable() {
                         key={j}
                         className={`border p-5 sm:p-6 text-center ${
                           col.isUs
-                            ? 'bg-[#fff8f2] border-[#ffd9bd]'
+                            ? 'bg-[#f0f9f5] border-[#c8e8dc]'
                             : 'bg-white border-[#e5e5e5]'
                         }`}
                       >
                         <span
                           className={`${
                             col.isUs
-                              ? 'text-[20px] sm:text-[24px] text-[#f55f00] font-black'
+                              ? 'text-[20px] sm:text-[24px] text-[#41ac86] font-black'
                               : 'text-[17px] sm:text-[20px] text-[#888]'
                           }`}
                         >
@@ -116,11 +116,11 @@ export default function ComparisonTable() {
             <div
               key={ci}
               className={`bg-white border overflow-hidden ${
-                c.isUs ? 'border-[#f55f00] shadow-[0_12px_30px_rgba(245,95,0,0.15)]' : 'border-[#e5e5e5]'
+                c.isUs ? 'border-[#41ac86] shadow-[0_12px_30px_rgba(65,172,134,0.15)]' : 'border-[#e5e5e5]'
               }`}
             >
               {/* カードヘッダー */}
-              <div className={`px-5 py-5 ${c.isUs ? 'bg-[#f55f00]' : 'bg-[#fafafa]'}`}>
+              <div className={`px-5 py-5 ${c.isUs ? 'bg-[#41ac86]' : 'bg-[#fafafa]'}`}>
                 <p
                   className={`text-[10px] tracking-[0.2em] font-bold mb-1 ${
                     c.isUs ? 'text-white/70' : 'text-[#bbb]'
@@ -143,7 +143,7 @@ export default function ComparisonTable() {
                   <div
                     key={ri}
                     className={`flex items-center justify-between gap-3 px-5 py-3.5 ${
-                      c.isUs ? 'bg-[#fff8f2]' : 'bg-white'
+                      c.isUs ? 'bg-[#f0f9f5]' : 'bg-white'
                     }`}
                   >
                     <dt className="text-[13px] font-bold text-[#888] tracking-[0.02em] shrink-0">
@@ -151,7 +151,7 @@ export default function ComparisonTable() {
                     </dt>
                     <dd
                       className={`text-right text-[15px] font-black leading-tight ${
-                        c.isUs ? 'text-[#f55f00]' : 'text-[#555]'
+                        c.isUs ? 'text-[#41ac86]' : 'text-[#555]'
                       }`}
                     >
                       {r.values[ci]}

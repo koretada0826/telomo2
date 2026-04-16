@@ -33,7 +33,7 @@ function PriceCountUp() {
 }
 
 const checks = [
-  '月間4,700コール保証',
+  '月間22,000コール保証',
   '全コールログ開示',
   '初期費用なし',
   '最低契約期間なし',
@@ -174,9 +174,9 @@ export default function Pricing() {
               href="#contact-form"
               className="inline-block px-14 sm:px-20 py-6 text-white font-bold text-[18px] sm:text-[20px] rounded-full no-underline transition-all duration-300 hover:brightness-110 hover:scale-[1.02]"
               style={{
-                background: 'linear-gradient(180deg, #e67e22 0%, #d35400 100%)',
-                boxShadow: '0 15px 35px rgba(211, 84, 0, 0.4), inset 0 2px 2px rgba(255,255,255,0.3)',
-                border: '1px solid #a04000',
+                background: 'linear-gradient(180deg, #41ac86 0%, #2d8a6b 100%)',
+                boxShadow: '0 15px 35px rgba(53, 148, 113, 0.4), inset 0 2px 2px rgba(255,255,255,0.3)',
+                border: '1px solid #359471',
                 animation: 'pricing-cta-pulse 2s ease-in-out infinite',
               }}
             >
@@ -188,8 +188,8 @@ export default function Pricing() {
 
       <style>{`
         @keyframes pricing-cta-pulse {
-          0%, 100% { transform: scale(1); box-shadow: 0 15px 35px rgba(211, 84, 0, 0.4), inset 0 2px 2px rgba(255,255,255,0.3); }
-          50% { transform: scale(1.03); box-shadow: 0 20px 45px rgba(211, 84, 0, 0.5), inset 0 2px 2px rgba(255,255,255,0.3); }
+          0%, 100% { transform: scale(1); box-shadow: 0 15px 35px rgba(53, 148, 113, 0.4), inset 0 2px 2px rgba(255,255,255,0.3); }
+          50% { transform: scale(1.03); box-shadow: 0 20px 45px rgba(53, 148, 113, 0.5), inset 0 2px 2px rgba(255,255,255,0.3); }
         }
       `}</style>
     </section>

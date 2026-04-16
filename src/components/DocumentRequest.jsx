@@ -14,7 +14,7 @@ export default function DocumentRequest() {
     return (
       <section id="document-request" className="py-16 sm:py-24 px-5 sm:px-10 bg-white">
         <div className="max-w-[560px] mx-auto text-center">
-          <div className="w-14 h-14 rounded-full bg-[#f55f00] text-white text-[20px] flex items-center justify-center mx-auto mb-5">✓</div>
+          <div className="w-14 h-14 rounded-full bg-[#41ac86] text-white text-[20px] flex items-center justify-center mx-auto mb-5">✓</div>
           <p className="text-[24px] sm:text-[28px] font-black text-black mb-3">資料請求を受け付けました</p>
           <p className="text-[14px] text-[#4d4d4d]">ご登録のメールアドレス宛に資料をお送りします。</p>
         </div>
@@ -34,7 +34,7 @@ export default function DocumentRequest() {
     <section id="document-request" className="py-16 sm:py-24 px-5 sm:px-10 bg-[#f7f7f7]">
       <div className="max-w-[720px] mx-auto">
         <div className="fade-in text-center mb-8">
-          <p className="text-[12px] text-[#f55f00] tracking-[0.25em] font-bold mb-3">DOCUMENT REQUEST</p>
+          <p className="text-[12px] text-[#41ac86] tracking-[0.25em] font-bold mb-3">DOCUMENT REQUEST</p>
           <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] font-black text-black leading-[1.3] tracking-[0.02em] mb-3">
             資料請求
           </h2>
@@ -55,7 +55,7 @@ export default function DocumentRequest() {
                 <label className="flex items-center gap-2 text-[12px] font-bold text-black mb-1.5">
                   {f.label}
                   {f.required ? (
-                    <span className="text-[10px] font-bold text-white bg-[#f55f00] px-1.5 py-[1px] rounded-[3px]">必須</span>
+                    <span className="text-[10px] font-bold text-white bg-[#41ac86] px-1.5 py-[1px] rounded-[3px]">必須</span>
                   ) : (
                     <span className="text-[10px] font-bold text-[#999] bg-[#eee] px-1.5 py-[1px] rounded-[3px]">任意</span>
                   )}
@@ -66,7 +66,7 @@ export default function DocumentRequest() {
                   value={info[f.key]}
                   onChange={(e) => setInfo((prev) => ({ ...prev, [f.key]: e.target.value }))}
                   placeholder={f.placeholder}
-                  className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#f55f00] focus:bg-white transition-colors placeholder:text-[#ccc]"
+                  className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#41ac86] focus:bg-white transition-colors placeholder:text-[#ccc]"
                 />
               </div>
             ))}
@@ -82,7 +82,7 @@ export default function DocumentRequest() {
               value={info.note}
               onChange={(e) => setInfo((prev) => ({ ...prev, note: e.target.value }))}
               placeholder="導入時期・想定コール数・課題など、お気軽にご記入ください"
-              className="w-full px-4 py-3 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#f55f00] focus:bg-white transition-colors placeholder:text-[#ccc] resize-none"
+              className="w-full px-4 py-3 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#fafafa] focus:outline-none focus:border-[#41ac86] focus:bg-white transition-colors placeholder:text-[#ccc] resize-none"
             />
           </div>
 

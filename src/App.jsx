@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Experienced from './components/Experienced';
 import Newcomer from './components/Newcomer';
 import Flow from './components/Flow';
-import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import ConsultationCTA from './components/ConsultationCTA';
 import StepForm from './components/StepForm';
@@ -69,7 +68,6 @@ export default function App() {
         <Experienced />
         <Newcomer />
         <Flow />
-        <Pricing />
         <FAQ />
         <ConsultationCTA />
         <StepForm />

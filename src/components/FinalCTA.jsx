@@ -3,7 +3,7 @@ export default function FinalCTA() {
     <section
       className="py-16 sm:py-24 px-5 sm:px-10 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #1a1a1a 0%, #2d1a0a 50%, #3d1f00 100%)',
+        background: 'linear-gradient(135deg, #1a1a1a 0%, #1a2d25 50%, #1a3d2e 100%)',
       }}
     >
       {/* 背景画像 */}
@@ -15,9 +15,9 @@ export default function FinalCTA() {
       <div className="absolute inset-0 bg-black/55" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60" />
       {/* オレンジ光芒 */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-20" style={{ background: 'radial-gradient(ellipse at 30% 50%, #f55f00 0%, transparent 60%)' }} />
+      <div className="absolute top-0 left-0 w-full h-full opacity-20" style={{ background: 'radial-gradient(ellipse at 30% 50%, #41ac86 0%, transparent 60%)' }} />
       <div className="relative z-10 max-w-[800px] mx-auto text-center">
-        <p className="fade-in text-[16px] sm:text-[18px] text-[#f55f00] tracking-[0.15em] font-bold mb-4">テレモ</p>
+        <p className="fade-in text-[16px] sm:text-[18px] text-[#41ac86] tracking-[0.15em] font-bold mb-4">テレモ</p>
         <h2
           className="fade-in text-[32px] sm:text-[44px] lg:text-[52px] font-black text-white leading-[1.3] tracking-[0.04em] mb-5"
           style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.6)' }}
@@ -27,10 +27,16 @@ export default function FinalCTA() {
           日本一正直な営業代行
         </h2>
         <p
-          className="fade-in text-[18px] sm:text-[20px] text-white/90 mb-8"
+          className="fade-in text-[16px] sm:text-[18px] text-white/80 mb-3"
           style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}
         >
           かけた分だけ、全部見える。それがテレモです。
+        </p>
+        <p
+          className="fade-in text-[14px] sm:text-[16px] text-[#41ac86] font-bold mb-8"
+          style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}
+        >
+          現状の営業コストと比較した"削減インパクト"をその場で算出します
         </p>
         <div className="fade-in flex flex-col sm:flex-row gap-3 justify-center">
           <a href="#contact-form" className="btn-accent text-center text-[14px]">

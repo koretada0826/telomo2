@@ -82,7 +82,7 @@ export default function AchievementsAwards() {
                       {item.number}
                     </span>
                     <span
-                      className="text-[38px] lg:text-[48px] font-bold ml-1 text-[#f55f00]"
+                      className="text-[38px] lg:text-[48px] font-bold ml-1 text-[#41ac86]"
                       style={{ textShadow: '0 1px 0 rgba(255,255,255,0.95), 0 0 6px rgba(255,250,235,0.9)' }}
                     >
                       {item.unit}

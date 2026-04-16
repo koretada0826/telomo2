@@ -15,7 +15,7 @@ export default function FixedCTA() {
         <a href="#document-request" className="flex-1 inline-flex items-center justify-center bg-black text-white text-[12px] font-bold py-3 rounded-[96px] no-underline">
           資料請求
         </a>
-        <a href="#contact-form" className="flex-1 inline-flex items-center justify-center bg-[#f55f00] text-white text-[12px] font-bold py-3 rounded-[96px] no-underline">
+        <a href="#contact-form" className="flex-1 inline-flex items-center justify-center bg-[#41ac86] text-white text-[12px] font-bold py-3 rounded-[96px] no-underline">
           お問い合わせ
         </a>
       </div>

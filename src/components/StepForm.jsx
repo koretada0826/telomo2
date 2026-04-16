@@ -34,7 +34,7 @@ export default function StepForm() {
     return (
       <section id="contact-form" className="py-16 sm:py-24 px-5 sm:px-10 bg-white">
         <div className="max-w-[500px] mx-auto text-center">
-          <div className="w-14 h-14 rounded-full bg-[#f55f00] text-white text-[20px] flex items-center justify-center mx-auto mb-5">✓</div>
+          <div className="w-14 h-14 rounded-full bg-[#41ac86] text-white text-[20px] flex items-center justify-center mx-auto mb-5">✓</div>
           <p className="text-[24px] sm:text-[28px] font-bold text-black mb-3">ありがとうございます</p>
           <p className="text-[14px] text-[#4d4d4d]">担当者より24時間以内にご連絡いたします。</p>
         </div>
@@ -46,7 +46,7 @@ export default function StepForm() {
     <section id="contact-form" className="py-16 sm:py-24 px-5 sm:px-10 bg-white">
       <div className="max-w-[520px] mx-auto">
         <div className="fade-in text-center mb-8">
-          <p className="text-[12px] text-[#f55f00] tracking-[0.15em] font-bold mb-2">お問い合わせ</p>
+          <p className="text-[12px] text-[#41ac86] tracking-[0.15em] font-bold mb-2">お問い合わせ</p>
           <h2 className="text-[24px] sm:text-[28px] font-bold text-black leading-[1.4] tracking-[0.04em]">
             まずは状況を教えてください
           </h2>
@@ -58,7 +58,7 @@ export default function StepForm() {
             <p className="text-[11px] text-[#999]">{isHearing ? `STEP ${step + 1}` : '最終STEP'} / {totalSteps + 1}</p>
           </div>
           <div className="w-full h-[3px] bg-[#e5e5e5] rounded-full overflow-hidden">
-            <div className="h-full bg-[#f55f00] rounded-full transition-all duration-500" style={{ width: `${((isHearing ? step + 1 : totalSteps + 1) / (totalSteps + 1)) * 100}%` }} />
+            <div className="h-full bg-[#41ac86] rounded-full transition-all duration-500" style={{ width: `${((isHearing ? step + 1 : totalSteps + 1) / (totalSteps + 1)) * 100}%` }} />
           </div>
         </div>
 
@@ -72,8 +72,8 @@ export default function StepForm() {
                   onClick={() => selectAnswer(opt)}
                   className={`w-full text-left px-5 py-4 rounded-[12px] border-2 text-[14px] font-medium transition-all cursor-pointer ${
                     answers[hearingQuestions[step].key] === opt
-                      ? 'border-[#f55f00] bg-[#f55f00] text-white'
-                      : 'border-[#e5e5e5] bg-[#f7f7f7] text-black hover:border-[#f55f00]'
+                      ? 'border-[#41ac86] bg-[#41ac86] text-white'
+                      : 'border-[#e5e5e5] bg-[#f7f7f7] text-black hover:border-[#41ac86]'
                   }`}
                 >
                   {opt}
@@ -107,7 +107,7 @@ export default function StepForm() {
                     value={contactInfo[field.key]}
                     onChange={(e) => setContactInfo((prev) => ({ ...prev, [field.key]: e.target.value }))}
                     placeholder={field.placeholder}
-                    className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#f7f7f7] focus:outline-none focus:border-[#f55f00] transition-colors placeholder:text-[#ccc]"
+                    className="w-full px-4 py-3.5 rounded-[10px] border-2 border-[#e5e5e5] text-[14px] text-black bg-[#f7f7f7] focus:outline-none focus:border-[#41ac86] transition-colors placeholder:text-[#ccc]"
                   />
                 </div>
               ))}

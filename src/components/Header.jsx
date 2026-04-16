@@ -30,7 +30,7 @@ export default function Header() {
     >
       {/* Orange accent bar on scroll */}
       <div
-        className={`h-[3px] bg-[#f55f00] transition-opacity duration-300 ${
+        className={`h-[3px] bg-[#41ac86] transition-opacity duration-300 ${
           scrolled ? 'opacity-100' : 'opacity-0'
         }`}
       />
@@ -46,11 +46,11 @@ export default function Header() {
             <a
               key={i}
               href={n.href}
-              className="group inline-flex items-center gap-1.5 text-[14px] text-[#333] font-bold no-underline hover:text-[#f55f00] transition-colors cursor-pointer"
+              className="group inline-flex items-center gap-1.5 text-[14px] text-[#333] font-bold no-underline hover:text-[#41ac86] transition-colors cursor-pointer"
             >
               {n.label}
               <svg
-                className="w-[8px] h-[8px] text-[#999] group-hover:text-[#f55f00] transition-colors"
+                className="w-[8px] h-[8px] text-[#999] group-hover:text-[#41ac86] transition-colors"
                 viewBox="0 0 10 10"
                 fill="currentColor"
                 aria-hidden="true"
@@ -71,7 +71,7 @@ export default function Header() {
           </a>
           <a
             href="#contact-form"
-            className="header-pulse-orange inline-flex items-center justify-center bg-[#f55f00] text-white text-[12px] lg:text-[13px] font-bold h-[38px] sm:h-[42px] px-5 sm:px-7 rounded-[96px] no-underline hover:bg-[#ca4700] transition-colors tracking-[0.03em]"
+            className="header-pulse-orange inline-flex items-center justify-center bg-[#41ac86] text-white text-[12px] lg:text-[13px] font-bold h-[38px] sm:h-[42px] px-5 sm:px-7 rounded-[96px] no-underline hover:bg-[#359471] transition-colors tracking-[0.03em]"
           >
             お問い合わせ
           </a>
@@ -82,7 +82,7 @@ export default function Header() {
             aria-label="メニューを開く"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="lg:hidden inline-flex items-center justify-center w-[40px] h-[40px] text-black hover:text-[#f55f00] transition-colors"
+            className="lg:hidden inline-flex items-center justify-center w-[40px] h-[40px] text-black hover:text-[#41ac86] transition-colors"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               {menuOpen ? (
@@ -112,7 +112,7 @@ export default function Header() {
               key={i}
               href={n.href}
               onClick={() => setMenuOpen(false)}
-              className="flex items-center justify-between px-5 py-4 border-b border-[#f0f0f0] text-[15px] font-bold text-[#333] no-underline hover:bg-[#fafafa] hover:text-[#f55f00] transition-colors"
+              className="flex items-center justify-between px-5 py-4 border-b border-[#f0f0f0] text-[15px] font-bold text-[#333] no-underline hover:bg-[#fafafa] hover:text-[#41ac86] transition-colors"
             >
               <span>{n.label}</span>
               <svg className="w-[14px] h-[14px] text-[#bbb]" viewBox="0 0 14 14" fill="none" aria-hidden="true">

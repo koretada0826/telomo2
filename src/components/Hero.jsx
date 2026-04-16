@@ -13,7 +13,7 @@ const branches = [
     tagJa: 'はじめての方',
     title: 'そもそも営業代行って何？',
     desc: '人を雇うより安く・多く・全部見える営業代行です。',
-    bullets: ['4,700コール保証', 'スクリプト込み'],
+    bullets: ['22,000コール保証', '営業約5人分', 'スクリプト込み'],
     href: '#service-intro',
     cta: 'はじめての方向けに見る',
     isDark: false,
@@ -23,7 +23,7 @@ const branches = [
     tagJa: '利用経験がある方',
     title: '「成果ゼロ」で悩んでいませんか',
     desc: '高額・不透明・長期縛り。全部逆に設計しました。',
-    bullets: ['全ログ開示', '縛りなし'],
+    bullets: ['全ログ開示', '縛りなし', '22,000コール'],
     href: '#pain-points',
     cta: '経験者向けに見る',
     isDark: true,
@@ -50,7 +50,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-[1] pointer-events-none hidden lg:block"
         style={{
-          background: `radial-gradient(700px circle at ${mousePos.x}px ${mousePos.y}px, rgba(245,95,0,0.08), transparent 60%)`,
+          background: `radial-gradient(700px circle at ${mousePos.x}px ${mousePos.y}px, rgba(65,172,134,0.08), transparent 60%)`,
         }}
       />
 
@@ -66,30 +66,30 @@ export default function Hero() {
       {/* Top-right orange glow */}
       <div
         className="absolute -top-[200px] -right-[200px] w-[600px] h-[600px] rounded-full z-0"
-        style={{ background: 'radial-gradient(circle, rgba(245,95,0,0.08) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, rgba(65,172,134,0.08) 0%, transparent 70%)' }}
       />
 
       <div className="relative z-10 max-w-[1240px] mx-auto px-5 sm:px-8 lg:px-10 w-full">
 
         {/* === 上部: ヘッドライン === */}
         <div className="text-center mb-6 sm:mb-8 lg:mb-10">
-          <p className="fade-in inline-flex items-center gap-3 text-[18px] sm:text-[22px] lg:text-[24px] text-[#f55f00] tracking-[0.12em] font-black mb-6 sm:mb-8">
-            <span className="w-10 sm:w-12 h-[2px] bg-[#f55f00]" />
+          <p className="fade-in inline-flex items-center gap-3 text-[18px] sm:text-[22px] lg:text-[24px] text-[#41ac86] tracking-[0.12em] font-black mb-6 sm:mb-8">
+            <span className="w-10 sm:w-12 h-[2px] bg-[#41ac86]" />
             営業経験15年以上のプロが設計
-            <span className="w-10 sm:w-12 h-[2px] bg-[#f55f00]" />
+            <span className="w-10 sm:w-12 h-[2px] bg-[#41ac86]" />
           </p>
 
           <h1
             className="fade-in mx-auto text-black"
             style={{ ...headingStyle, fontSize: 'clamp(22px, 3.6vw, 40px)', lineHeight: 1.3 }}
           >
-            結果ゼロの営業代行に、もう払わなくていい。
+            <span className="text-[#41ac86]">営業5人分</span>を、1つの仕組みで回せる。
             <br className="hidden sm:inline" />
-            <span className="text-[#f55f00]">AI × 営業のプロで、最高の営業代行を。</span>
+            月間約<span className="text-[#41ac86]">22,000コール</span>。人で換算すると約5人分。
           </h1>
 
           <p className="fade-in mt-6 sm:mt-8 text-[15px] sm:text-[18px] lg:text-[20px] font-bold text-[#333] leading-[1.5]">
-            まずは<span className="text-[#f55f00]">あなたに合うほう</span>からご覧ください。
+            まずは<span className="text-[#41ac86]">あなたに合うほう</span>からご覧ください。
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export default function Hero() {
               className={`fade-in group relative block overflow-hidden transition-all duration-500 ${
                 b.isDark
                   ? 'bg-black text-white hover:bg-[#111]'
-                  : 'bg-white text-black border-2 border-black hover:border-[#f55f00]'
+                  : 'bg-white text-black border-2 border-black hover:border-[#41ac86]'
               }`}
               style={{ transitionDelay: `${i * 0.12}s` }}
             >
@@ -113,14 +113,14 @@ export default function Hero() {
                 }`}
                 style={{
                   backgroundImage: b.isDark
-                    ? 'radial-gradient(circle at 80% 10%, #f55f00 0%, transparent 50%)'
-                    : 'radial-gradient(circle at 80% 10%, #f55f00 0%, transparent 50%)',
+                    ? 'radial-gradient(circle at 80% 10%, #41ac86 0%, transparent 50%)'
+                    : 'radial-gradient(circle at 80% 10%, #41ac86 0%, transparent 50%)',
                 }}
               />
 
               {/* ホバーアクセント */}
               <div
-                className="absolute top-0 left-0 w-full h-[4px] bg-[#f55f00] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
+                className="absolute top-0 left-0 w-full h-[4px] bg-[#41ac86] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
                 aria-hidden="true"
               />
 
@@ -129,7 +129,7 @@ export default function Hero() {
                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                   <span
                     className={`text-[11px] sm:text-[12px] font-black tracking-[0.25em] ${
-                      b.isDark ? 'text-[#f55f00]' : 'text-[#f55f00]'
+                      b.isDark ? 'text-[#41ac86]' : 'text-[#41ac86]'
                     }`}
                   >
                     {b.tag}
@@ -181,7 +181,7 @@ export default function Hero() {
                         b.isDark ? 'text-white/90' : 'text-black'
                       }`}
                     >
-                      <span className="inline-block w-[4px] h-[4px] rounded-full bg-[#f55f00] shrink-0" />
+                      <span className="inline-block w-[4px] h-[4px] rounded-full bg-[#41ac86] shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -197,8 +197,8 @@ export default function Hero() {
                   <span
                     className={`inline-flex items-center justify-center w-[38px] h-[38px] rounded-full transition-all duration-300 ${
                       b.isDark
-                        ? 'bg-[#f55f00] text-white group-hover:scale-110'
-                        : 'bg-black text-white group-hover:bg-[#f55f00] group-hover:scale-110'
+                        ? 'bg-[#41ac86] text-white group-hover:scale-110'
+                        : 'bg-black text-white group-hover:bg-[#41ac86] group-hover:scale-110'
                     }`}
                   >
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">

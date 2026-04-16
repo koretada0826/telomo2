@@ -19,13 +19,13 @@ export default function ScrollCounter() {
       <div className="bg-black py-3 px-5">
         <div className="max-w-[1240px] mx-auto flex items-center justify-center gap-8 sm:gap-16">
           {[
-            { num: '4,700', unit: 'コール/月' },
+            { num: '22,000', unit: 'コール/月' },
             { num: '100%', unit: 'ログ開示' },
             { num: '14万円', unit: '/月' },
           ].map((item, i) => (
             <div key={i} className="flex items-baseline gap-1.5">
               <span
-                className="text-[18px] sm:text-[22px] font-black text-[#f55f00] leading-none"
+                className="text-[18px] sm:text-[22px] font-black text-[#41ac86] leading-none"
                 style={{ fontFamily: '"M PLUS 1p", "Noto Sans JP", sans-serif' }}
               >
                 {item.num}

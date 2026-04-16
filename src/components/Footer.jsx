@@ -4,8 +4,8 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8">
           <div>
-            <p className="text-[20px] font-bold tracking-[0.05em] mb-1">テレモ</p>
-            <p className="text-[12px] text-[#999]">エバー・エフォート株式会社</p>
+            <img src="/img/logo.png" alt="テレモ" className="h-[34px] sm:h-[40px] w-auto mb-1" style={{ filter: 'brightness(0) invert(1)' }} />
+            <p className="text-[12px] text-[#999]">株式会社GIGUUU</p>
           </div>
           <nav className="flex flex-wrap gap-5">
             <a href="#experienced" className="text-[12px] text-[#999] no-underline hover:text-white transition-colors">経験者の方</a>
@@ -16,7 +16,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="border-t border-[#333] pt-6">
-          <p className="text-[10px] text-[#666]">© Ever Effort Inc. All Rights Reserved.</p>
+          <p className="text-[10px] text-[#666]">© GIGUUU Inc. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
