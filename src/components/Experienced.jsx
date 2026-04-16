@@ -777,8 +777,7 @@ export default function Experienced() {
               TALK TREE DESIGN
             </p>
             <h4 className="text-[22px] sm:text-[30px] lg:text-[38px] font-black text-black leading-[1.3] mb-6 sm:mb-8">
-              この仕組みの肝は<br className="hidden sm:inline" />
-              「<span className="text-[#41ac86]">トークツリーの設計</span>」にすべてある
+              この仕組みの肝は「<span className="text-[#41ac86]">トークツリーの設計</span>」にすべてある
             </h4>
 
             <div className="space-y-5 sm:space-y-6 mb-8">
