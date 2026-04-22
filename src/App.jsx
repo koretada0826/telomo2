@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Experienced from './components/Experienced';
@@ -15,14 +15,6 @@ import FixedCTA from './components/FixedCTA';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
-
-  useEffect(() => {
-    const onMove = (e) => setCursorPos({ x: e.clientX, y: e.clientY });
-    window.addEventListener('mousemove', onMove, { passive: true });
-    return () => window.removeEventListener('mousemove', onMove);
-  }, []);
-
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries) => {
@@ -80,10 +72,6 @@ export default function App() {
       </main>
       <Footer />
       <FixedCTA />
-      <div
-        className="cursor-glow"
-        style={{ left: cursorPos.x, top: cursorPos.y }}
-      />
     </>
   );
 }

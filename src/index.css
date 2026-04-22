@@ -335,18 +335,3 @@
   animation-delay: 0s !important;
 }
 
-/* Custom cursor glow - orange dot following mouse */
-.cursor-glow {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(65,172,134,0.4) 0%, rgba(65,172,134,0.15) 40%, rgba(65,172,134,0) 70%);
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: left 0.08s ease-out, top 0.08s ease-out;
-}
-@media (max-width: 768px) {
-  .cursor-glow { display: none; }
-}
