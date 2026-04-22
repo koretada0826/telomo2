@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 
 const navItems = [
-  { label: '経験者の方',     href: '#experienced' },
-  { label: '初めての方',     href: '#newcomer' },
+  { label: '初めての方',     href: '#service-intro' },
+  { label: '経験者の方',     href: '#pain-points' },
   { label: 'ご利用の流れ',   href: '#flow' },
-  { label: '料金',           href: '#pricing' },
 ];
 
 export default function Header() {

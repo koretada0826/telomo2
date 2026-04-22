@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8">
           <div>
-            <img src="/img/logo.png" alt="テレモ" className="h-[34px] sm:h-[40px] w-auto mb-1" style={{ filter: 'brightness(0) invert(1)' }} />
+            <img src="/img/logo.png" alt="テレモ" className="h-[34px] sm:h-[40px] w-auto mb-1" />
             <p className="text-[12px] text-[#999]">株式会社GIGUUU</p>
           </div>
           <nav className="flex flex-wrap gap-5">

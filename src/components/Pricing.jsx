@@ -10,7 +10,7 @@ function PriceCountUp() {
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
-          const target = 14;
+          const target = 28;
           let current = 0;
           const timer = setInterval(() => {
             current++;
@@ -20,7 +20,7 @@ function PriceCountUp() {
             } else {
               setCount(current);
             }
-          }, 1200 / 28);
+          }, 1200 / 56);
         }
       },
       { threshold: 0.3 }
@@ -33,10 +33,10 @@ function PriceCountUp() {
 }
 
 const checks = [
-  '月間22,000コール保証',
+  '月間8,800コール保証',
   '全コールログ開示',
   '初期費用なし',
-  '最低契約期間なし',
+  '契約期間6ヶ月〜',
   '専任担当者配置',
   'スクリプト設計込み',
 ];
@@ -133,7 +133,7 @@ export default function Pricing() {
             <div className="absolute -bottom-[5px] -left-[5px] w-5 h-5 border-b-2 border-l-2 border-[#d4af37]" />
             <div className="absolute -bottom-[5px] -right-[5px] w-5 h-5 border-b-2 border-r-2 border-[#d4af37]" />
             <p className="text-[16px] sm:text-[18px] text-[#555] m-0">
-              他社平均30〜80万円 → <span className="font-bold text-[1.2em]" style={{ color: '#b38728' }}>約1/4のコスト</span>
+              他社平均50〜80万円 → <span className="font-bold text-[1.2em]" style={{ color: '#b38728' }}>約1/2のコスト</span>
             </p>
           </div>
 

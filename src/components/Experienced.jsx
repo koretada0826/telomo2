@@ -41,8 +41,8 @@ const painVoices = [
     tag: '契約の縛り',
     quote: '半年払ってもアポは片手で数えるほど。\n解約しても請求書だけ届き続けた。',
     author: '製造業 / 取締役',
-    answer: '最低契約期間・解約料ともにゼロ。1ヶ月単位の更新で翌月解約OK。"辞めたいのに辞められない"が起きません。',
-    answerPoints: ['縛りなし', '解約料ゼロ', '1ヶ月単位で更新'],
+    answer: '初期契約6ヶ月、以降6ヶ月自動更新。成果が出るまでのPDCA期間を確保した、合理的な設計です。',
+    answerPoints: ['6ヶ月契約', '自動更新', '解約料ゼロ'],
   },
   {
     tag: 'ブラックボックス',
@@ -397,14 +397,14 @@ export default function Experienced() {
           <p className="text-[18px] sm:text-[22px] lg:text-[26px] font-bold text-black leading-[1.6]">
             <span className="inline-block bg-[#41ac86] text-white px-3 py-1 rounded-[6px] text-[16px] sm:text-[20px] font-bold mr-1">トークツリー設計</span>
             から
-            <span className="inline-block bg-[#41ac86] text-white px-3 py-1 rounded-[6px] text-[16px] sm:text-[20px] font-bold mx-1">22,000コール実行</span>
+            <span className="inline-block bg-[#41ac86] text-white px-3 py-1 rounded-[6px] text-[16px] sm:text-[20px] font-bold mx-1">8,800コール実行</span>
             まで行う
           </p>
           <p className="text-[26px] sm:text-[34px] lg:text-[40px] font-black text-black leading-[1.3] mt-2">
             「営業代行サービス」
           </p>
           <p className="text-[14px] sm:text-[16px] text-[#888] mt-2">
-            ※人で換算すると約5人分（人の場合：200コール/日 × 22日 = 約4,400コール）
+            ※人で換算すると約2人分（人の場合：200コール/日 × 22日 = 約4,400コール）
           </p>
         </div>
 
@@ -656,7 +656,7 @@ export default function Experienced() {
                 {/* 比較行 */}
                 {[
                   { item: '稼働時間',       human: '平日8時間',         telemo: '24時間365日稼働' },
-                  { item: 'コール量',       human: '月500〜1,000件',    telemo: '月22,000コール（約5人分）' },
+                  { item: 'コール量',       human: '月500〜1,000件',    telemo: '月8,800コール（約2人分）' },
                   { item: '通話ログ',       human: '担当メモのみ',       telemo: '全通話を100%記録' },
                   { item: '会話分析',       human: '担当の感覚',         telemo: 'AIが数値で検出' },
                   { item: '改善サイクル',   human: '個人の経験則',       telemo: '全データから自動学習' },
@@ -751,7 +751,7 @@ export default function Experienced() {
               <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
                 現場で鍛え上げたトークツリー・KPI・改善ロジックに、AIの実行力と分析力を乗せる。
                 <br className="hidden sm:inline" />
-                月間22,000コール——人で換算すると約5人分の営業力。
+                月間8,800コール——人で換算すると約2人分の営業力。
               </p>
               <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
                 「人が設計し、AIが動かし、人が磨く」——
@@ -780,14 +780,14 @@ export default function Experienced() {
               この仕組みの肝は「<span className="text-[#41ac86]">トークツリーの設計</span>」にすべてある
             </h4>
 
-            <div className="space-y-5 sm:space-y-6 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-8">
               <div className="flex gap-4 items-start">
                 <span className="shrink-0 inline-flex w-[40px] h-[40px] sm:w-[48px] sm:h-[48px] rounded-full bg-[#41ac86] items-center justify-center text-white text-[14px] sm:text-[16px] font-black">01</span>
                 <div>
                   <p className="text-[16px] sm:text-[20px] font-black text-black mb-1">設計思想</p>
                   <p className="text-[14px] sm:text-[17px] text-[#333] leading-[1.9] font-medium">
-                    新人3ヶ月レベルの<span className="font-black text-black">"無駄のない会話構成"</span>を再現。
-                    <br className="hidden sm:inline" />
+                    営業のプロレベルの<span className="font-black text-black">"無駄のない会話構成"</span>を再現。
+                    <br />
                     余計な前置き・曖昧な質問は一切排除しています。
                   </p>
                 </div>
@@ -798,7 +798,7 @@ export default function Experienced() {
                   <p className="text-[16px] sm:text-[20px] font-black text-black mb-1">話し方</p>
                   <p className="text-[14px] sm:text-[17px] text-[#333] leading-[1.9] font-medium">
                     トップ営業マンの<span className="font-black text-black">"間・語尾・テンション"</span>を徹底研究。
-                    <br className="hidden sm:inline" />
+                    <br />
                     機械的ではない、自然で説得力のある会話を実現します。
                   </p>
                 </div>
@@ -806,7 +806,7 @@ export default function Experienced() {
             </div>
 
             <div className="pt-5 sm:pt-6 border-t border-[#eee]">
-              <p className="text-[15px] sm:text-[19px] lg:text-[22px] font-black text-black leading-[1.6]">
+              <p className="text-[18px] sm:text-[24px] lg:text-[30px] font-black text-black leading-[1.6]">
                 誰でも成果に近づく会話を<span className="text-[#41ac86]">仕組み化</span>しました。
               </p>
             </div>
@@ -827,16 +827,23 @@ export default function Experienced() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: '01', title: '余計な会話は一切しない', desc: '目的のない雑談・回りくどい説明はゼロ。必要な情報だけを、必要な順番で。' },
-                { icon: '02', title: 'YESを取るための流れ', desc: '相手が「はい」と言いやすい質問設計。小さなYESを積み重ねて商談へ導きます。' },
-                { icon: '03', title: '温度感の見極め', desc: '相手の反応から興味度を即座に判定。見込みのある先だけにリソースを集中。' },
-                { icon: '04', title: 'トスまでの最短導線', desc: 'アポイント獲得までの無駄なステップを排除。最短ルートで商談の場を作ります。' },
+                { icon: '01', title: '余計な会話は一切しない', lines: ['目的のない雑談・回りくどい説明はゼロ。', '必要な情報だけを、必要な順番で。'] },
+                { icon: '02', title: 'YESを取るための流れ', lines: ['相手が「はい」と言いやすい質問設計。', '小さなYESを積み重ねて商談へ導きます。'] },
+                { icon: '03', title: '温度感の見極め', lines: ['相手の反応から興味度を即座に判定。', '見込みのある先だけにリソースを集中。'] },
+                { icon: '04', title: 'トスまでの最短導線', lines: ['アポイント獲得までの無駄なステップを排除。', '最短ルートで商談の場を作ります。'] },
               ].map((item, i) => (
-                <div key={i} className="flex gap-4 items-start bg-white border-2 border-black p-5 sm:p-6" style={{ boxShadow: '4px 4px 0 0 #41ac86', transitionDelay: `${i * 0.06}s` }}>
-                  <span className="shrink-0 inline-flex w-[40px] h-[40px] rounded-full bg-black items-center justify-center text-[#41ac86] text-[14px] font-black">{item.icon}</span>
-                  <div>
-                    <p className="text-[16px] sm:text-[18px] font-black text-black mb-1">{item.title}</p>
-                    <p className="text-[13px] sm:text-[15px] text-[#4d4d4d] leading-[1.8]">{item.desc}</p>
+                <div key={i} className="flex gap-4 items-center bg-white border-2 border-black py-5 pr-5 pl-14 sm:py-6 sm:pr-6 sm:pl-20" style={{ boxShadow: '4px 4px 0 0 #41ac86', transitionDelay: `${i * 0.06}s` }}>
+                  <span className="shrink-0 inline-flex w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] rounded-full bg-black items-center justify-center text-[#41ac86] text-[15px] sm:text-[17px] font-black">{item.icon}</span>
+                  <div className="flex-1 text-center">
+                    <p className="text-[19px] sm:text-[24px] font-black text-black mb-2">{item.title}</p>
+                    <p className="text-[15px] sm:text-[18px] text-[#4d4d4d] leading-[1.8]">
+                      {item.lines.map((line, j) => (
+                        <span key={j}>
+                          {line}
+                          {j < item.lines.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
                   </div>
                 </div>
               ))}

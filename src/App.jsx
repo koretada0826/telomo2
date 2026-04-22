@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Experienced from './components/Experienced';
 import Newcomer from './components/Newcomer';
+import PerformanceData from './components/PerformanceData';
+import HiringComparison from './components/HiringComparison';
 import Flow from './components/Flow';
 import FAQ from './components/FAQ';
 import ConsultationCTA from './components/ConsultationCTA';
@@ -67,6 +69,8 @@ export default function App() {
         <Hero />
         <Experienced />
         <Newcomer />
+        <PerformanceData />
+        <HiringComparison />
         <Flow />
         <FAQ />
         <ConsultationCTA />

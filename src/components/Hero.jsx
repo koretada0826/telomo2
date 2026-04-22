@@ -10,12 +10,12 @@ const headingStyle = {
 const branches = [
   {
     tag: 'NEWCOMER',
-    tagJa: 'はじめての方',
+    tagJa: '初めての方',
     title: 'そもそも営業代行って何？',
     desc: '人を雇うより安く・多く・全部見える営業代行です。',
-    bullets: ['22,000コール保証', '営業約5人分', 'スクリプト込み'],
+    bullets: ['8,800コール保証', '営業約2人分', 'スクリプト込み'],
     href: '#service-intro',
-    cta: 'はじめての方向けに見る',
+    cta: '初めての方向けに見る',
     isDark: false,
   },
   {
@@ -23,7 +23,7 @@ const branches = [
     tagJa: '利用経験がある方',
     title: '「成果ゼロ」で悩んでいませんか',
     desc: '高額・不透明・長期縛り。全部逆に設計しました。',
-    bullets: ['全ログ開示', '縛りなし', '22,000コール'],
+    bullets: ['全ログ開示', '月28万円', '8,800コール'],
     href: '#pain-points',
     cta: '経験者向けに見る',
     isDark: true,
@@ -73,7 +73,7 @@ export default function Hero() {
 
         {/* === 上部: ヘッドライン === */}
         <div className="text-center mb-6 sm:mb-8 lg:mb-10">
-          <p className="fade-in inline-flex items-center gap-3 text-[18px] sm:text-[22px] lg:text-[24px] text-[#41ac86] tracking-[0.12em] font-black mb-6 sm:mb-8">
+          <p className="fade-in inline-flex items-center gap-3 text-[14px] sm:text-[16px] lg:text-[18px] text-[#41ac86] tracking-[0.12em] font-black mb-4 sm:mb-6">
             <span className="w-10 sm:w-12 h-[2px] bg-[#41ac86]" />
             営業経験15年以上のプロが設計
             <span className="w-10 sm:w-12 h-[2px] bg-[#41ac86]" />
@@ -81,15 +81,22 @@ export default function Hero() {
 
           <h1
             className="fade-in mx-auto text-black"
-            style={{ ...headingStyle, fontSize: 'clamp(22px, 3.6vw, 40px)', lineHeight: 1.3 }}
+            style={{ ...headingStyle, fontSize: 'clamp(26px, 4.5vw, 52px)', lineHeight: 1.25 }}
           >
-            <span className="text-[#41ac86]">営業5人分</span>を、1つの仕組みで回せる。
-            <br className="hidden sm:inline" />
-            月間約<span className="text-[#41ac86]">22,000コール</span>。人で換算すると約5人分。
+            結果が出ない営業代行に
+            <br />
+            <span className="text-[#41ac86]">もう払わなくていい。</span>
           </h1>
 
-          <p className="fade-in mt-6 sm:mt-8 text-[15px] sm:text-[18px] lg:text-[20px] font-bold text-[#333] leading-[1.5]">
-            まずは<span className="text-[#41ac86]">あなたに合うほう</span>からご覧ください。
+          <p
+            className="fade-in mt-5 sm:mt-7 text-black leading-[1.5]"
+            style={{ ...headingStyle, fontSize: 'clamp(18px, 3vw, 30px)' }}
+          >
+            月<span className="text-[#41ac86]">8,800コール</span>を仕組みで回す。
+          </p>
+
+          <p className="fade-in mt-3 sm:mt-4 text-[14px] sm:text-[22px] lg:text-[26px] font-bold text-[#555] leading-[1.6] whitespace-nowrap">
+            営業代行で失敗した人ほど違いが分かります。
           </p>
         </div>
 
@@ -173,11 +180,11 @@ export default function Hero() {
                 </p>
 
                 {/* 箇条書き */}
-                <ul className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-x-3 gap-y-1.5 mb-4 sm:mb-5">
+                <ul className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-x-3 gap-y-2 mb-4 sm:mb-5">
                   {b.bullets.map((item, j) => (
                     <li
                       key={j}
-                      className={`flex items-center gap-2 text-[12px] sm:text-[13px] font-bold ${
+                      className={`flex items-center gap-2 text-[15px] sm:text-[13px] font-bold ${
                         b.isDark ? 'text-white/90' : 'text-black'
                       }`}
                     >
