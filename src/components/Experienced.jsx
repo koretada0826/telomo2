@@ -594,7 +594,12 @@ export default function Experienced() {
                     {v.tag}
                   </p>
                   <p className="text-[15px] sm:text-[19px] lg:text-[22px] font-black text-black leading-[1.45]">
-                    {v.answer}
+                    {v.answer.split('。').filter(Boolean).map((s, j, arr) => (
+                      <span key={j}>
+                        {s}。
+                        {j < arr.length - 1 && <br className="sm:hidden" />}
+                      </span>
+                    ))}
                   </p>
                 </div>
 
