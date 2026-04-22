@@ -627,7 +627,7 @@ export default function Experienced() {
             />
             <div className="relative p-6 sm:p-10 lg:p-14">
               {/* ヘッダー */}
-              <div className="text-center mb-8 sm:mb-10">
+              <div className="text-center mb-5 sm:mb-10">
                 <p className="inline-flex items-center gap-3 text-[11px] sm:text-[13px] text-[#41ac86] tracking-[0.3em] font-black mb-3">
                   <span className="w-8 h-[2px] bg-[#41ac86]" />
                   HUMAN × AI
@@ -649,16 +649,16 @@ export default function Experienced() {
               <div className="overflow-hidden border border-[#e5e5e5]">
                 {/* ヘッダー行 */}
                 <div className="grid grid-cols-[1.1fr_1fr_1.3fr] items-stretch bg-[#fafafa] border-b border-[#e5e5e5]">
-                  <div className="px-4 sm:px-6 py-4 sm:py-5 text-[#999] text-[10px] sm:text-[11px] font-black tracking-[0.2em] uppercase flex items-center justify-center">
+                  <div className="px-3 sm:px-6 py-2 sm:py-5 text-[#999] text-[10px] sm:text-[11px] font-black tracking-[0.2em] uppercase flex items-center justify-center">
                     Item
                   </div>
-                  <div className="px-4 sm:px-6 py-4 sm:py-5 text-center border-l border-[#e5e5e5] bg-white">
-                    <p className="text-[10px] sm:text-[11px] tracking-[0.2em] font-bold text-[#bbb] mb-1">HUMAN</p>
-                    <p className="text-[15px] sm:text-[18px] lg:text-[20px] font-black text-[#555]">人間の営業</p>
+                  <div className="px-3 sm:px-6 py-2 sm:py-5 text-center border-l border-[#e5e5e5] bg-white">
+                    <p className="text-[9px] sm:text-[11px] tracking-[0.2em] font-bold text-[#bbb] mb-0.5 sm:mb-1">HUMAN</p>
+                    <p className="text-[13px] sm:text-[18px] lg:text-[20px] font-black text-[#555]">人間の営業</p>
                   </div>
-                  <div className="px-4 sm:px-6 py-4 sm:py-5 text-center bg-[#41ac86] border-l border-[#41ac86]">
-                    <p className="text-[10px] sm:text-[11px] tracking-[0.2em] font-bold text-white/80 mb-1">TELEMO</p>
-                    <p className="text-[16px] sm:text-[20px] lg:text-[22px] font-black text-white">プロ × AI</p>
+                  <div className="px-3 sm:px-6 py-2 sm:py-5 text-center bg-[#41ac86] border-l border-[#41ac86]">
+                    <p className="text-[9px] sm:text-[11px] tracking-[0.2em] font-bold text-white/80 mb-0.5 sm:mb-1">TELEMO</p>
+                    <p className="text-[14px] sm:text-[20px] lg:text-[22px] font-black text-white">プロ × AI</p>
                   </div>
                 </div>
 
@@ -678,25 +678,25 @@ export default function Experienced() {
                     }`}
                   >
                     {/* 項目名 */}
-                    <div className="px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-center text-center bg-[#fafafa]">
-                      <span className="text-[13px] sm:text-[15px] lg:text-[16px] font-black text-black">
+                    <div className="px-2 sm:px-6 py-2 sm:py-5 flex items-center justify-center text-center bg-[#fafafa]">
+                      <span className="text-[11px] sm:text-[15px] lg:text-[16px] font-black text-black leading-[1.3]">
                         {r.item}
                       </span>
                     </div>
 
                     {/* 人 */}
-                    <div className="px-4 sm:px-6 py-4 sm:py-5 border-l border-[#eee] flex items-center justify-center text-center bg-white">
-                      <span className="text-[13px] sm:text-[15px] text-[#888] leading-[1.5]">
+                    <div className="px-2 sm:px-6 py-2 sm:py-5 border-l border-[#eee] flex items-center justify-center text-center bg-white">
+                      <span className="text-[11px] sm:text-[15px] text-[#888] leading-[1.3]">
                         {r.human}
                       </span>
                     </div>
 
                     {/* テレモ */}
-                    <div className="px-4 sm:px-6 py-4 sm:py-5 border-l border-[#c8e8dc] bg-[#f0f9f5] flex items-center justify-center text-center gap-2">
-                      <svg className="shrink-0 w-4 h-4 text-[#41ac86]" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <div className="px-2 sm:px-6 py-2 sm:py-5 border-l border-[#c8e8dc] bg-[#f0f9f5] flex items-center justify-center text-center gap-1 sm:gap-2">
+                      <svg className="shrink-0 w-3 h-3 sm:w-4 sm:h-4 text-[#41ac86]" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path d="M3 8 L7 12 L13 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <span className="text-[13px] sm:text-[15px] lg:text-[17px] font-black text-[#41ac86] leading-[1.4]">
+                      <span className="text-[11px] sm:text-[15px] lg:text-[17px] font-black text-[#41ac86] leading-[1.3]">
                         {r.telemo}
                       </span>
                     </div>
