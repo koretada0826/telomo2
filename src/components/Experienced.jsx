@@ -654,7 +654,7 @@ export default function Experienced() {
                   </div>
                   <div className="px-3 sm:px-6 py-2 sm:py-5 text-center border-l border-[#e5e5e5] bg-white">
                     <p className="text-[9px] sm:text-[11px] tracking-[0.2em] font-bold text-[#bbb] mb-0.5 sm:mb-1">HUMAN</p>
-                    <p className="text-[13px] sm:text-[18px] lg:text-[20px] font-black text-[#555]">人間の営業</p>
+                    <p className="text-[13px] sm:text-[18px] lg:text-[20px] font-black text-[#555]">人の営業</p>
                   </div>
                   <div className="px-3 sm:px-6 py-2 sm:py-5 text-center bg-[#41ac86] border-l border-[#41ac86]">
                     <p className="text-[9px] sm:text-[11px] tracking-[0.2em] font-bold text-white/80 mb-0.5 sm:mb-1">TELEMO</p>
