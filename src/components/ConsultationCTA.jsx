@@ -1,7 +1,7 @@
 const points = [
-  { title: '採用コストの可視化', desc: '現状の営業人件費（社保・交通費・教育費含む）とテレモのコスト差を算出します。' },
-  { title: '離職リスクの試算', desc: '営業担当の離職で発生する再採用・再教育コストのインパクトを見える化します���' },
-  { title: '削減インパクトの提示', desc: 'テレモ導入で削減できるコストと、得られる稼働量を具体的な数字でお伝えします。' },
+  { title: '採用コストの可視化', desc: '現状の営業人件費とテレモのコスト差を算出します。' },
+  { title: '離職リスクの試算', desc: '離職で発生する再採用・再教育コストを試算します。' },
+  { title: '削減インパクトの提示', desc: '削減コストと稼働量を具体的な数字でお伝えします。' },
 ];
 
 export default function ConsultationCTA() {
@@ -18,10 +18,10 @@ export default function ConsultationCTA() {
             <p className="fade-in text-[13px] text-[#41ac86] tracking-[0.2em] font-bold mb-4">
               無料相談
             </p>
-            <h2 className="fade-in text-[28px] sm:text-[36px] lg:text-[42px] font-black text-white leading-[1.3] mb-5">
-              現状の営業コストと比較した
-              <br className="hidden sm:inline" />
-              <span className="text-[#41ac86]">"削減インパクト"</span>をその場で算出
+            <h2 className="fade-in font-black text-white leading-[1.3] mb-5" style={{ fontSize: 'clamp(18px, 5.2vw, 42px)' }}>
+              <span className="whitespace-nowrap">現状の営業コストと比較した</span>
+              <br />
+              <span className="whitespace-nowrap"><span className="text-[#41ac86]">"削減インパクト"</span>をその場で算出</span>
             </h2>
             <p className="fade-in text-[15px] sm:text-[17px] text-white/70 leading-[1.8] mb-8">
               採用コスト・離職リスク・教育コスト——

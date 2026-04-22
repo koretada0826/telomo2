@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: 'どんな業種に対応していますか？',
-    a: 'BtoB商材であれば基本的にすべての業種に対応可能です。IT・SaaS、人材、不動産、製造業、コンサルティングなど幅広い実績があります。初回のヒアリングで貴社の商材に合ったアプローチを設計します。',
+    a: 'BtoB商材なら基本的に全業種対応可能。IT・SaaS、人材、不動産、製造業など幅広い実績があります。初回ヒアリングで最適なアプローチを設計します。',
   },
   {
     q: 'トークスクリプトは誰がどうやって作りますか？',
@@ -51,7 +51,7 @@ export default function FAQ() {
         <h2 className="fade-in text-[28px] sm:text-[40px] lg:text-[44px] font-black text-black leading-[1.3] tracking-[0.02em] mb-4 text-center">
           よくある<span className="text-[#41ac86]">ご質問</span>
         </h2>
-        <p className="fade-in text-[15px] sm:text-[16px] text-[#4d4d4d] text-center mb-12">
+        <p className="fade-in text-[#4d4d4d] text-center mb-12 whitespace-nowrap" style={{ fontSize: 'clamp(12px, 3.6vw, 16px)' }}>
           テレモについて、よくいただくご質問をまとめました。
         </p>
 

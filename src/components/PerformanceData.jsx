@@ -79,8 +79,10 @@ export default function PerformanceData() {
           </h2>
           <p className="text-[15px] sm:text-[17px] text-[#555] leading-[1.8] max-w-[680px] mx-auto">
             実際の稼働データを公開します。
-            <br className="hidden sm:inline" />
-            誇張なし。日次実績に基づく数値のみ。
+            <br />
+            誇張なし。
+            <br className="sm:hidden" />
+            日次実績に基づく数値のみ。
           </p>
         </div>
 
@@ -103,7 +105,7 @@ export default function PerformanceData() {
               {/* 数値 */}
               <div className="p-5 sm:p-6 space-y-4">
                 {c.metrics.map((m, j) => (
-                  <div key={j} className="flex items-end justify-between gap-3 border-b border-[#eee] pb-3 last:border-0 last:pb-0">
+                  <div key={j} className="flex items-end justify-center sm:justify-between gap-8 sm:gap-3 border-b border-[#eee] pb-3 last:border-0 last:pb-0">
                     <span className="text-[15px] sm:text-[17px] font-black text-[#333]">{m.label}</span>
                     <div className="text-right">
                       <span className="text-[36px] sm:text-[44px] font-black text-[#41ac86] leading-none" style={{ fontFamily: '"M PLUS 1p", sans-serif' }}>
@@ -122,7 +124,7 @@ export default function PerformanceData() {
         <div className="fade-in text-center bg-[#f0f9f5] border-l-[6px] border-[#41ac86] py-6 sm:py-8 px-6 sm:px-10">
           <p className="text-[22px] sm:text-[30px] lg:text-[36px] font-black text-black leading-[1.4]">
             業種を選ばない<span className="text-[#41ac86]">再現性</span>。
-            <br className="hidden sm:inline" />
+            <br />
             営業は<span className="text-[#41ac86]">「確率」</span>で作れる。
           </p>
           <p className="mt-4 text-[16px] sm:text-[19px] text-[#555] font-bold">

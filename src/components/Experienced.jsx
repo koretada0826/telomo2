@@ -39,30 +39,30 @@ function CountUp({ target, suffix }) {
 const painVoices = [
   {
     tag: '契約の縛り',
-    quote: '半年払ってもアポは片手で数えるほど。\n解約しても請求書だけ届き続けた。',
+    quote: '半年払ってもアポは片手で数えるほど。解約しても請求書だけ届き続けた。',
     author: '製造業 / 取締役',
-    answer: '初期契約6ヶ月、以降6ヶ月自動更新。成果が出るまでのPDCA期間を確保した、合理的な設計です。',
+    answer: '初期契約6ヶ月、以降6ヶ月自動更新。PDCA期間を確保した合理的な設計。',
     answerPoints: ['6ヶ月契約', '自動更新', '解約料ゼロ'],
   },
   {
     tag: 'ブラックボックス',
-    quote: '月1回のサマリーPDFだけ。\n誰が何を話したか、すべて信じるしかなかった。',
+    quote: '月1回のサマリーPDFだけ。\n何を話したか全く見えない。',
     author: 'IT / マーケ責任者',
-    answer: '全コール録音を100%開示。いつ・誰に・何を話したかをリアルタイムで確認できます。',
+    answer: '全コール録音を100%開示。いつ・誰に・何を話したか即確認可能。',
     answerPoints: ['全録音開示', 'コール一覧', 'ダッシュボード'],
   },
   {
     tag: 'ブランド毀損',
     quote: '後から録音を聞いて愕然。\n粘る強引トークを、うちの名前で。',
     author: 'SaaS / 事業責任者',
-    answer: '営業経験15年のプロがスクリプト設計。録音で品質を毎日チェックできます。',
+    answer: '営業経験15年のプロがスクリプト設計。毎日の録音で品質管理。',
     answerPoints: ['プロ設計', '毎日レビュー', 'ブランド保全'],
   },
   {
     tag: '営業知見ゼロ',
-    quote: 'AI営業サービスを使ったら、\n開発者はエンジニアで営業の知見ゼロだった。',
+    quote: 'AI営業を使ってみたら、\n作ったのは営業素人のエンジニア。',
     author: 'スタートアップ / 代表',
-    answer: '営業経験15年以上のプロが設計から実行まで。机上のロジックではなく、現場を知る人間が動かします。',
+    answer: '営業経験15年以上のプロが設計から実行まで。現場を知る人間が動かす。',
     answerPoints: ['プロが運営', '15年の現場経験', '人による実行'],
   },
 ];
@@ -404,7 +404,9 @@ export default function Experienced() {
             「営業代行サービス」
           </p>
           <p className="text-[14px] sm:text-[16px] text-[#888] mt-2">
-            ※人で換算すると約2人分（人の場合：200コール/日 × 22日 = 約4,400コール）
+            ※人で換算すると約2人分
+            <br />
+            （人の場合：200コール/日 × 22日 = 約4,400コール）
           </p>
         </div>
 
@@ -495,7 +497,7 @@ export default function Experienced() {
                     </span>
 
                     <p
-                      className="relative pl-5 sm:pl-6 pt-1 text-[17px] sm:text-[20px] lg:text-[22px] text-black leading-[1.75] font-bold whitespace-pre-line tracking-[0.01em]"
+                      className="relative pl-5 sm:pl-6 pt-1 text-[15px] sm:text-[20px] lg:text-[22px] text-black leading-[1.75] font-bold whitespace-pre-line tracking-[0.01em] text-balance"
                       style={{ fontFamily: '"Noto Serif JP", serif' }}
                     >
                       {v.quote}
@@ -563,7 +565,9 @@ export default function Experienced() {
                 <span className="text-[#41ac86]">私たちはこうします</span>
               </h3>
               <p className="mt-4 sm:mt-5 text-[14px] sm:text-[18px] text-[#555] font-bold">
-                「よくある話」を、テレモは<span className="text-[#41ac86] font-black">起きない仕組みにした</span>のです。
+                「よくある話」を、テレモは
+                <br className="sm:hidden" />
+                <span className="text-[#41ac86] font-black">起きない仕組みにした</span>のです。
               </p>
             </div>
           </div>
@@ -700,6 +704,7 @@ export default function Experienced() {
                 <span className="text-black">営業のプロ</span>
                 <span className="inline-block mx-2 sm:mx-3 text-[#41ac86]">×</span>
                 <span className="text-black">AIの実行力</span>
+                <br className="sm:hidden" />
                 <span className="inline-block mx-2 sm:mx-3 text-[#41ac86]">＝</span>
                 <span className="text-[#41ac86]">テレモ</span>
               </p>
@@ -720,7 +725,8 @@ export default function Experienced() {
             <div className="mb-7 sm:mb-9">
               <p className="text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
                 一般的なAI営業は、
-                <span className="font-black text-black">エンジニアが作っています</span>。
+                <span className="font-black text-black">エンジニアが作っている</span>。
+                <br className="sm:hidden" />
                 技術は優れていても、<span className="font-black text-black">営業を知らない</span>。
               </p>
               <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
@@ -750,8 +756,8 @@ export default function Experienced() {
               </p>
               <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
                 現場で鍛え上げたトークツリー・KPI・改善ロジックに、AIの実行力と分析力を乗せる。
-                <br className="hidden sm:inline" />
-                月間8,800コール——人で換算すると約2人分の営業力。
+                <br />
+                月間8,800コール——人で換算すると約2人分。
               </p>
               <p className="mt-3 text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
                 「人が設計し、AIが動かし、人が磨く」——
@@ -827,16 +833,40 @@ export default function Experienced() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: '01', title: '余計な会話は一切しない', lines: ['目的のない雑談・回りくどい説明はゼロ。', '必要な情報だけを、必要な順番で。'] },
-                { icon: '02', title: 'YESを取るための流れ', lines: ['相手が「はい」と言いやすい質問設計。', '小さなYESを積み重ねて商談へ導きます。'] },
-                { icon: '03', title: '温度感の見極め', lines: ['相手の反応から興味度を即座に判定。', '見込みのある先だけにリソースを集中。'] },
-                { icon: '04', title: 'トスまでの最短導線', lines: ['アポイント獲得までの無駄なステップを排除。', '最短ルートで商談の場を作ります。'] },
+                {
+                  icon: '01', title: '余計な会話は一切しない',
+                  mobileLines: ['無駄な雑談・説明はゼロ', '必要な話だけを最短で'],
+                  lines: ['目的のない雑談・回りくどい説明はゼロ。', '必要な情報だけを、必要な順番で。'],
+                },
+                {
+                  icon: '02', title: 'YESを取るための流れ',
+                  mobileLines: ['YESを取る質問設計', '小さなYESを積み重ねる'],
+                  lines: ['相手が「はい」と言いやすい質問設計。', '小さなYESを積み重ねて商談へ導きます。'],
+                },
+                {
+                  icon: '03', title: '温度感の見極め',
+                  mobileLines: ['反応から興味度を即判定', '見込み先にだけ集中'],
+                  lines: ['相手の反応から興味度を即座に判定。', '見込みのある先だけにリソースを集中。'],
+                },
+                {
+                  icon: '04', title: 'トスまでの最短導線',
+                  mobileLines: ['無駄な工程は排除', '最短で商談の場へ'],
+                  lines: ['アポイント獲得までの無駄なステップを排除。', '最短ルートで商談の場を作ります。'],
+                },
               ].map((item, i) => (
-                <div key={i} className="flex gap-4 items-center bg-white border-2 border-black py-5 pr-5 pl-14 sm:py-6 sm:pr-6 sm:pl-20" style={{ boxShadow: '4px 4px 0 0 #41ac86', transitionDelay: `${i * 0.06}s` }}>
+                <div key={i} className="flex gap-4 items-center bg-white border-2 border-black py-5 pr-5 pl-5 sm:py-6 sm:pr-6 sm:pl-20" style={{ boxShadow: '4px 4px 0 0 #41ac86', transitionDelay: `${i * 0.06}s` }}>
                   <span className="shrink-0 inline-flex w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] rounded-full bg-black items-center justify-center text-[#41ac86] text-[15px] sm:text-[17px] font-black">{item.icon}</span>
                   <div className="flex-1 text-center">
                     <p className="text-[19px] sm:text-[24px] font-black text-black mb-2">{item.title}</p>
-                    <p className="text-[15px] sm:text-[18px] text-[#4d4d4d] leading-[1.8]">
+                    <p className="sm:hidden text-[15px] text-[#4d4d4d] leading-[1.8]">
+                      {item.mobileLines.map((line, j) => (
+                        <span key={j}>
+                          {line}
+                          {j < item.mobileLines.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </p>
+                    <p className="hidden sm:block text-[18px] text-[#4d4d4d] leading-[1.8]">
                       {item.lines.map((line, j) => (
                         <span key={j}>
                           {line}
@@ -854,9 +884,9 @@ export default function Experienced() {
           <div className="fade-in mt-10 sm:mt-14 text-center">
             <p className="text-[18px] sm:text-[26px] lg:text-[32px] font-black text-black leading-[1.4]">
               「<span className="text-[#41ac86]">払ったのに成果ゼロ</span>」も、
-              <br className="hidden sm:inline" />
+              <br />
               「<span className="text-[#41ac86]">何してるかわからない</span>」も、
-              <br className="hidden sm:inline" />
+              <br />
               テレモでは、<span className="text-[#41ac86]">起きません。</span>
             </p>
           </div>

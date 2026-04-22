@@ -17,7 +17,7 @@ const steps = [
     num: '03',
     tag: '集中',
     heading: '本業に\n集中できる',
-    body: '新��開拓をプロに任せれば、自社は商品開発や顧客フォローな���コア業務に専念できます。',
+    body: '新規開拓をプロに任せれば、自社は商品開発や顧客フォローなどコア業務に専念できます。',
     highlight: { label: '営業工数', value: '実質 0', note: '自社の強みに時間を使える' },
   },
 ];
@@ -30,7 +30,7 @@ export default function Newcomer() {
         <p className="fade-in text-[12px] text-[#41ac86] tracking-[0.15em] font-bold mb-3">
           営業代行を使ったことがない方へ
         </p>
-        <h2 className="fade-in text-[28px] sm:text-[40px] lg:text-[44px] font-black text-black leading-[1.3] tracking-[0.02em] mb-10">
+        <h2 className="fade-in font-black text-black leading-[1.3] tracking-[0.02em] mb-10 whitespace-nowrap" style={{ fontSize: 'clamp(22px, 6.2vw, 44px)' }}>
           営業の課題、<span className="text-[#41ac86]">こう解決</span>します
         </h2>
 

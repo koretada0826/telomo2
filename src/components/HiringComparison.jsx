@@ -95,8 +95,8 @@ export default function HiringComparison() {
         </div>
 
         {/* 結論 */}
-        <div className="fade-in text-center bg-white border-2 border-black p-6 sm:p-8 mb-12 sm:mb-16" style={{ boxShadow: '6px 6px 0 0 #41ac86' }}>
-          <p className="text-[20px] sm:text-[28px] lg:text-[32px] font-black text-black leading-[1.4]">
+        <div className="fade-in text-center bg-white border-2 border-black px-4 py-6 sm:p-8 mb-6 sm:mb-10" style={{ boxShadow: '6px 6px 0 0 #41ac86' }}>
+          <p className="font-black text-black leading-[1.4] whitespace-nowrap" style={{ fontSize: 'clamp(15px, 4.4vw, 32px)' }}>
             同じコストで、<span className="text-[#41ac86]">リスクがゼロ</span>になる。
           </p>
           <p className="mt-2 text-[14px] sm:text-[16px] text-[#555] font-bold">
@@ -130,19 +130,28 @@ export default function HiringComparison() {
                 <span className="inline-flex w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-full bg-black items-center justify-center text-[#41ac86] text-[14px] sm:text-[15px] font-black mb-3">
                   {item.icon}
                 </span>
-                <p className="text-[18px] sm:text-[20px] font-black text-black mb-3">{item.title}</p>
-                <p className="text-[14px] sm:text-[15px] text-[#888] leading-[1.7] whitespace-pre-line font-medium">{item.desc}</p>
+                <p className="text-[26px] sm:text-[20px] font-black text-black mb-3">{item.title}</p>
+                <p className="text-[18px] sm:text-[15px] text-[#888] leading-[1.7] whitespace-pre-line font-medium">{item.desc}</p>
               </div>
             ))}
           </div>
 
           {/* テレモの答え */}
           <div className="fade-in bg-[#f0f9f5] p-8 sm:p-12 text-center">
-            <p className="text-[24px] sm:text-[34px] lg:text-[40px] font-black text-black leading-[1.5]">
-              テレモは、<span className="text-[#41ac86]">辞めない。飽きない。ブレない。</span>
+            <p className="font-black text-black leading-[1.5]" style={{ fontSize: 'clamp(18px, 5.2vw, 40px)' }}>
+              <span className="sm:hidden">
+                テレモは
+                <br />
+                <span className="text-[#41ac86] whitespace-nowrap">辞めない。飽きない。ブレない。</span>
+              </span>
+              <span className="hidden sm:inline">
+                テレモは、<span className="text-[#41ac86]">辞めない。飽きない。ブレない。</span>
+              </span>
             </p>
             <p className="mt-4 text-[16px] sm:text-[20px] text-[#555] leading-[1.8]">
-              感情に左右されない。24時間365日、同じ品質で稼働し続けます。
+              感情に左右されない。24時間365日、
+              <br className="sm:hidden" />
+              同じ品質で稼働し続けます。
             </p>
           </div>
         </div>

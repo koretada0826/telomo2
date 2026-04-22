@@ -4,22 +4,22 @@ const flowSteps = [
   {
     num: '01',
     title: '無料相談 (10~15分)',
-    desc: '現状の営業体制や課題をヒアリング。テレモが合うかどうか正直にお伝えします。',
+    desc: '現状の営業体制や課題をヒアリング。\nテレモが合うかどうか正直にお伝えします。',
   },
   {
     num: '02',
     title: 'ご提案・お見積り',
-    desc: 'ターゲットリスト・スクリプト・KPIを設計。ご納得いただけた場合のみ契約へ。',
+    desc: 'ターゲットリスト・スクリプト・KPIを設計。\nご納得いただけた場合のみ契約へ。',
   },
   {
     num: '03',
     title: 'コール開始',
-    desc: '契約後最短5営業日でコール開始。専任チームが月間8,800コールを実行します。',
+    desc: '契約後最短5営業日でコール開始。\n専任チームが月間8,800コールを実行します。',
   },
   {
     num: '04',
     title: 'レポート・改善',
-    desc: '全コールログをリアルタイム共有。データをもとにスクリプトやリストを継続改善。',
+    desc: '全コールログをリアルタイム共有。\nデータをもとにスクリプトやリストを継続改善。',
   },
 ];
 
@@ -57,7 +57,7 @@ export default function Flow() {
         <p className="fade-in text-[15px] sm:text-[16px] text-[#41ac86] tracking-[0.1em] font-bold mb-3">
           ご利用の流れ
         </p>
-        <h2 className="fade-in text-[32px] sm:text-[40px] lg:text-[44px] font-bold text-[#333] tracking-[0.05em] mb-16 sm:mb-20">
+        <h2 className="fade-in font-bold text-[#333] tracking-[0.03em] mb-16 sm:mb-20 whitespace-nowrap" style={{ fontSize: 'clamp(22px, 6.2vw, 44px)' }}>
           最短5営業日でコール開始
         </h2>
 
@@ -97,7 +97,7 @@ export default function Flow() {
                   <h3 className="text-[19px] sm:text-[22px] font-bold text-[#333] mb-4 leading-[1.4]">
                     {s.title}
                   </h3>
-                  <p className="text-[14px] sm:text-[16px] text-[#666] leading-[1.8] m-0">
+                  <p className="text-[14px] sm:text-[16px] text-[#666] leading-[1.8] m-0 whitespace-pre-line">
                     {s.desc}
                   </p>
                 </div>
@@ -134,7 +134,7 @@ export default function Flow() {
         <div className="fade-in mt-14 sm:mt-16">
           <a
             href="#contact-form"
-            className="inline-block px-14 py-5 text-white font-bold text-[18px] sm:text-[20px] rounded-full no-underline hover:scale-[1.05]"
+            className="inline-block px-6 py-4 sm:px-14 sm:py-5 text-white font-bold text-[15px] sm:text-[20px] rounded-full no-underline hover:scale-[1.05] whitespace-nowrap"
             style={{
               background: '#41ac86',
               boxShadow: '0 8px 20px rgba(65, 172, 134, 0.3)',

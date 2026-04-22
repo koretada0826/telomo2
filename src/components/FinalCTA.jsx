@@ -30,13 +30,17 @@ export default function FinalCTA() {
           className="fade-in text-[20px] sm:text-[24px] text-white font-bold mb-4"
           style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}
         >
-          かけた分だけ、全部見える。それがテレモです。
+          かけた分だけ、全部見える。
+          <br className="sm:hidden" />
+          それがテレモです。
         </p>
         <p
-          className="fade-in text-[17px] sm:text-[20px] text-[#41ac86] font-black mb-10"
-          style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}
+          className="fade-in text-[#41ac86] font-black mb-10"
+          style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)', fontSize: 'clamp(13px, 4vw, 20px)' }}
         >
-          現状の営業コストと比較した"削減インパクト"をその場で算出します
+          <span className="whitespace-nowrap">現状の営業コストと比較した</span>
+          <br className="sm:hidden" />
+          <span className="whitespace-nowrap">"削減インパクト"をその場で算出します</span>
         </p>
         <div className="fade-in flex flex-col sm:flex-row gap-3 justify-center">
           <a href="#contact-form" className="btn-accent text-center">

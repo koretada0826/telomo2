@@ -195,16 +195,24 @@
   justify-content: center;
   background: #41ac86;
   color: #fff;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
-  padding: 20px 52px;
+  padding: 16px 28px;
   border-radius: 96px;
   text-decoration: none;
   border: 2px solid #41ac86;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   cursor: pointer;
+  white-space: nowrap;
   animation: pulse-btn-accent 2s ease-in-out infinite 0.4s;
   transition: background 0.2s;
+}
+@media (min-width: 640px) {
+  .btn-accent {
+    font-size: 19px;
+    padding: 20px 52px;
+    letter-spacing: 0.5px;
+  }
 }
 .btn-accent:hover {
   background: #359471;
