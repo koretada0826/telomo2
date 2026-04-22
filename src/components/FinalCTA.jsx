@@ -17,7 +17,7 @@ export default function FinalCTA() {
       {/* オレンジ光芒 */}
       <div className="absolute top-0 left-0 w-full h-full opacity-20" style={{ background: 'radial-gradient(ellipse at 30% 50%, #41ac86 0%, transparent 60%)' }} />
       <div className="relative z-10 max-w-[800px] mx-auto text-center">
-        <p className="fade-in text-[18px] sm:text-[22px] text-[#41ac86] tracking-[0.15em] font-black mb-5">テレモ</p>
+        <p className="fade-in text-[18px] sm:text-[22px] text-[#41ac86] tracking-[0.15em] font-black mb-5">TELEMO</p>
         <h2
           className="fade-in text-[32px] sm:text-[44px] lg:text-[52px] font-black text-white leading-[1.3] tracking-[0.04em] mb-6"
           style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.6)' }}
@@ -32,7 +32,7 @@ export default function FinalCTA() {
         >
           かけた分だけ、全部見える。
           <br className="sm:hidden" />
-          それがテレモです。
+          それがTELEMOです。
         </p>
         <p
           className="fade-in text-[#41ac86] font-black mb-10"

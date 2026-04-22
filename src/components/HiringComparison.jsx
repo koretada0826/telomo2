@@ -68,11 +68,11 @@ export default function HiringComparison() {
             </div>
           </div>
 
-          {/* テレモ */}
+          {/* TELEMO */}
           <div className="fade-in bg-white border-2 border-[#41ac86] overflow-hidden shadow-[0_12px_30px_rgba(65,172,134,0.15)]" style={{ transitionDelay: '0.1s' }}>
             <div className="bg-[#41ac86] px-6 py-5 text-center">
               <p className="text-[10px] tracking-[0.2em] font-bold text-white/70 mb-1">TELEMO</p>
-              <p className="text-[20px] sm:text-[24px] font-black text-white">テレモ</p>
+              <p className="text-[20px] sm:text-[24px] font-black text-white">TELEMO</p>
             </div>
             <div className="p-5 sm:p-6 space-y-3">
               {telemoCosts.map((c, i) => (
@@ -136,16 +136,16 @@ export default function HiringComparison() {
             ))}
           </div>
 
-          {/* テレモの答え */}
+          {/* TELEMOの答え */}
           <div className="fade-in bg-[#f0f9f5] p-8 sm:p-12 text-center">
             <p className="font-black text-black leading-[1.5]" style={{ fontSize: 'clamp(18px, 5.2vw, 40px)' }}>
               <span className="sm:hidden">
-                テレモは
+                TELEMOは
                 <br />
                 <span className="text-[#41ac86] whitespace-nowrap">辞めない。飽きない。ブレない。</span>
               </span>
               <span className="hidden sm:inline">
-                テレモは、<span className="text-[#41ac86]">辞めない。飽きない。ブレない。</span>
+                TELEMOは、<span className="text-[#41ac86]">辞めない。飽きない。ブレない。</span>
               </span>
             </p>
             <p className="mt-4 text-[16px] sm:text-[20px] text-[#555] leading-[1.8]">

@@ -1,5 +1,5 @@
 const points = [
-  { title: '採用コストの可視化', desc: '現状の営業人件費とテレモのコスト差を算出します。' },
+  { title: '採用コストの可視化', desc: '現状の営業人件費とTELEMOのコスト差を算出します。' },
   { title: '離職リスクの試算', desc: '離職で発生する再採用・再教育コストを試算します。' },
   { title: '削減インパクトの提示', desc: '削減コストと稼働量を具体的な数字でお伝えします。' },
 ];
@@ -26,7 +26,7 @@ export default function ConsultationCTA() {
             <p className="fade-in text-[15px] sm:text-[17px] text-white/70 leading-[1.8] mb-8">
               採用コスト・離職リスク・教育コスト——
               <br className="hidden sm:inline" />
-              これらを数字で可視化し、テレモ導入の効果を正直にお伝えします。
+              これらを数字で可視化し、TELEMO導入の効果を正直にお伝えします。
               <br className="hidden sm:inline" />
               合わなければ、それでOKです。
             </p>

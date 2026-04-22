@@ -392,7 +392,7 @@ export default function Experienced() {
         {/* ===== Hero-style intro block (like reference) ===== */}
         <div id="service-intro" className="fade-in text-center mb-2 scroll-mt-[80px]">
           <p className="text-[22px] sm:text-[28px] lg:text-[32px] font-black text-[#41ac86] leading-[1.3] mb-3">
-            テレモは
+            TELEMOは
           </p>
           <p className="text-[18px] sm:text-[22px] lg:text-[26px] font-bold text-black leading-[1.6]">
             <span className="inline-block bg-[#41ac86] text-white px-3 py-1 rounded-[6px] text-[16px] sm:text-[20px] font-bold mr-1">トークツリー設計</span>
@@ -458,7 +458,7 @@ export default function Experienced() {
           <p className="fade-in text-center text-[16px] sm:text-[18px] text-[#4d4d4d] leading-[2] max-w-[760px] mx-auto mb-10">
             営業代行を使ったことがある方なら、どれか1つは心当たりがあるはず。
             <br className="hidden sm:inline" />
-            テレモは、これらすべてを起きないように設計されました。
+            TELEMOは、これらすべてを起きないように設計されました。
           </p>
 
 
@@ -565,7 +565,7 @@ export default function Experienced() {
                 <span className="text-[#41ac86]">私たちはこうします</span>
               </h3>
               <p className="mt-4 sm:mt-5 text-[14px] sm:text-[18px] text-[#555] font-bold">
-                「よくある話」を、テレモは
+                「よくある話」を、TELEMOは
                 <br className="sm:hidden" />
                 <span className="text-[#41ac86] font-black">起きない仕組みにした</span>のです。
               </p>
@@ -641,11 +641,11 @@ export default function Experienced() {
                 <p className="mt-4 sm:mt-5 text-[14px] sm:text-[17px] text-[#555] leading-[1.8] max-w-[720px] mx-auto">
                   プロの現場知見で設計し、AIで実行量・データ・品質を底上げ。
                   <br className="hidden sm:inline" />
-                  「人がやる営業」の限界を、テレモはひとつずつ外しました。
+                  「人がやる営業」の限界を、TELEMOはひとつずつ外しました。
                 </p>
               </div>
 
-              {/* 人 vs テレモ 比較表 */}
+              {/* 人 vs TELEMO 比較表 */}
               <div className="overflow-hidden border border-[#e5e5e5]">
                 {/* ヘッダー行 */}
                 <div className="grid grid-cols-[1.1fr_1fr_1.3fr] items-stretch bg-[#fafafa] border-b border-[#e5e5e5]">
@@ -691,7 +691,7 @@ export default function Experienced() {
                       </span>
                     </div>
 
-                    {/* テレモ */}
+                    {/* TELEMO */}
                     <div className="px-2 sm:px-6 py-2 sm:py-5 border-l border-[#c8e8dc] bg-[#f0f9f5] flex items-center justify-center text-center gap-1 sm:gap-2">
                       <svg className="shrink-0 w-3 h-3 sm:w-4 sm:h-4 text-[#41ac86]" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path d="M3 8 L7 12 L13 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -711,7 +711,7 @@ export default function Experienced() {
                 <span className="text-black">AIの実行力</span>
                 <br className="sm:hidden" />
                 <span className="inline-block mx-2 sm:mx-3 text-[#41ac86]">＝</span>
-                <span className="text-[#41ac86]">テレモ</span>
+                <span className="text-[#41ac86]">TELEMO</span>
               </p>
             </div>
           </div>
@@ -750,10 +750,10 @@ export default function Experienced() {
               <span className="h-[2px] flex-1 bg-[#41ac86]/30" />
             </div>
 
-            {/* ブロック2: テレモは違う */}
+            {/* ブロック2: TELEMOは違う */}
             <div className="mb-7 sm:mb-9">
               <p className="text-[15px] sm:text-[18px] lg:text-[20px] font-black text-black leading-[1.7] mb-3">
-                テレモは、違います。
+                TELEMOは、違います。
               </p>
               <p className="text-[14px] sm:text-[17px] lg:text-[18px] text-[#333] leading-[1.95] font-medium">
                 <span className="font-black text-black">15年以上の営業実績を持つチームが、現場ベースでトーク設計</span>
@@ -773,7 +773,7 @@ export default function Experienced() {
             {/* 締め */}
             <div className="pt-5 sm:pt-6 border-t-2 border-[#41ac86]/30">
               <p className="text-[15px] sm:text-[19px] lg:text-[22px] font-black text-black leading-[1.6]">
-                他のAI営業代行と、<span className="text-[#41ac86]">テレモを同じ土俵で比べないでください。</span>
+                他のAI営業代行と、<span className="text-[#41ac86]">TELEMOを同じ土俵で比べないでください。</span>
               </p>
               <p className="mt-2 text-[13px] sm:text-[16px] text-[#555] font-bold">
                 設計の起点が、そもそも違います。
@@ -892,7 +892,7 @@ export default function Experienced() {
               <br />
               「<span className="text-[#41ac86]">何してるかわからない</span>」も、
               <br />
-              テレモでは、<span className="text-[#41ac86]">起きません。</span>
+              TELEMOでは、<span className="text-[#41ac86]">起きません。</span>
             </p>
           </div>
         </div>

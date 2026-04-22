@@ -7,13 +7,13 @@ const columns = [
   },
   {
     rank: null,
-    name: 'テレモ',
+    name: 'TELEMO',
     subLabel: '営業プロ × AI',
     isUs: true,
   },
 ];
 
-// 値の並びは columns と同じ順（人 → テレモ）
+// 値の並びは columns と同じ順（人 → TELEMO）
 const rows = [
   { item: '稼働時間',     values: ['平日8時間',            '24時間365日稼働'] },
   { item: '月間コール数', values: ['500〜1,000件',         '8,800コール（約2人分）'] },

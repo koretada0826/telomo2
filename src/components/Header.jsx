@@ -36,7 +36,7 @@ export default function Header() {
       <div className="max-w-[1240px] mx-auto px-4 sm:px-8 lg:px-10 flex items-center justify-between h-[64px] sm:h-[72px] lg:h-[80px]">
         {/* Logo */}
         <a href="#" className="relative z-10 shrink-0">
-          <img src="/img/logo.png" alt="テレモ" className="h-[34px] sm:h-[42px] lg:h-[50px] w-auto" style={{ mixBlendMode: 'multiply' }} />
+          <img src="/img/logo.png" alt="TELEMO" className="h-[34px] sm:h-[42px] lg:h-[50px] w-auto" style={{ mixBlendMode: 'multiply' }} />
         </a>
 
         {/* Desktop nav */}
