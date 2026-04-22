@@ -23,7 +23,7 @@ export default function FinalCTA() {
           style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 0 24px rgba(0,0,0,0.6)' }}
         >
           営業のプロが作った
-          <br className="hidden sm:inline" />
+          <br />
           日本一正直な営業代行
         </h2>
         <p
